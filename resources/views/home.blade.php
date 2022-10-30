@@ -1,25 +1,46 @@
 @extends("layouts.app")
+
 @section('css')
 
+  <link rel="stylesheet" href="{{ URL::asset("assets/home.css") }}">
+  <!-- CSS only -->
+
+@endsection
+
 @section('title')
-    Home
-@stop
+  Home
+{{-- @stop --}}
 @endsection
 
 @section('content')
-{{-- <!-- row -->
-<div class="row">
-    <div class="col-md-12 mb-30">
-        <div class="card card-statistics h-100">
-            <div class="card-body">
-                <p>Page content goes here<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-            </div>
-        </div>
+<div class="landing-page">
+  <header class="main-header">
+    <div class="logo">
+      <a href="index.html">
+        WEB GAMES LOGO HERE
+      </a>
     </div>
-</div>
-<!-- row closed --> --}}
-@endsection
+    <nav class="desktop-main-menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">All Games</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
 
-@section('js')
+      </ul>
+    </nav>
+  </header>
+</div>
+<div class="first-page">
+  <div class="img">
+    <img draggable="false" src="{{ asset("images/302775228_403384081725332_1283203408436204244_n.jpg") }}" alt="image">
+  </div>
+  <div class="text">
+    <h3 class="display-2 lead">WEB GAMES</h3>
+    <p>Here You Can find Any Game with A Lot Of Categories.. And Play it Online !</p>
+    <a href="#" class="btn-play">Play Now !</a>
+  </div>
+</div>
 
 @endsection
