@@ -63,7 +63,10 @@ ul {
 .desktop-main-menu ul {
   display: flex;
 }
-
+.desktop-main-menu ul .activebtn {
+  border: 2px solid white;
+  padding: 5px 10px;
+}
 .desktop-main-menu ul li {
   position: relative;
   margin-right: 20px;
@@ -71,12 +74,13 @@ ul {
 }
 .desktop-main-menu ul li a {
   font-size: 23px;
+  padding: 10px 0;
 }
 .desktop-main-menu ul li a:hover {
   color: #fff;
 }
 /* Menu item bottom border */
-.desktop-main-menu ul li a::after {
+.desktop-main-menu ul li:not(:last-of-type) a::after {
   content: '';
   position: absolute;
   bottom: 0;

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&display=swap');
+/* Start Variables */
+:root {
+  /* --section-background : #fff; */
+}
+/* End Variables */
+
+
+/* Start Global Rules */
+html {
+  scroll-behavior: smooth;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'EB Garamond', serif;
+}
+
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+
+
+/* Start login */
+.login {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+.login .image{
+  flex-basis: 50%;
+  /* background-image: url(../images/discount-background1.jpg); */
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  animation: change-back linear infinite 10s;
+}
+@media (max-width: 991px) {
+  .login .image {
+      flex-basis: 100%;
+      padding: 30px 0;
+  }
+}
+.login .image::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.97);
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.login .content {
+  position: relative;
+  padding: 0 20px ;
+  text-align: center;
+}
+.login .content h2 {
+  font-size: 27px;
+  letter-spacing: -1px;
+  margin: 10px auto 30px;
+}
+.login .content p {
+  font-size: 16px;
+  max-width: 500px;
+  line-height: 1.6;
+  margin: 10px auto;
+}
+.login .content img {
+  width: 300px;
+  max-width: 100%;
+  
+}
+.login .form {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 0;
+}
+@media (max-width: 991px) {
+  .login .form {
+      flex-basis: 100%;
+  }
+}
+.login .form input{
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 23px;
+  background-color: #f9f9f9;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  caret-color: blue;
+}
+.login .form input:focus {
+  outline: none   ;
+}
+.login .form textarea:focus {
+  outline: none;
+}
+.login .form textarea{
+  resize: none;
+  height: 200px;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 23px;
+  background-color: #f9f9f9;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  caret-color: black;
+}
+.login .form input[type="submit"] {
+  color: white;
+  background-color: black;
+  padding: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: .3s;
+  border: 2px solid black;
+
+}
+.login .form input[type="submit"]:hover {
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+}
+/* End login */

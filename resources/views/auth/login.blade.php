@@ -1,4 +1,4 @@
-<x-guest-layout>
+{{-- <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
@@ -55,3 +55,53 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+ --}}
+
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>LOGIN</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="{{ URL::asset("assets/login.css") }}">
+
+
+</head>
+<body>
+    
+<!-- Start Login -->
+<div class="login" id="login">
+    <div class="image">
+        <div class="content">
+            <h2>Login</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, consequuntur laboriosam ratione molestiae possimus aliquid impedit sint, repellat ducimus quasi repudiandae voluptates reiciendis nam sunt nostrum unde dolorem libero quas.</p>
+            <img src="{{ asset("images/Two factor authentication-bro.svg") }}" alt="discount" />
+        </div>
+    </div>
+    <div class="form">
+        <div class="content">
+            <h2>Login To Your Account</h2>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                {{-- <x-input-label for="email" :value="__('Email')" /> --}}
+                <input type="email" placeholder="Your Email" name="email" id="mail" value="{{ old("email") }}" required autofocus>
+                <x-input-error :messages="$errors->get('email')" class="m-2" />
+                    
+                {{-- <x-input-label for="password" :value="__('Password')" /> --}}
+                <input type="password" placeholder="Your Phone" name="password" id="password" value="{{ old("password") }}" required >
+                <x-input-error :messages="$errors->get('password')" class="m-2" />
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Login -->
+</body>
+</html>
+
+
