@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\user_controll;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,10 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/home', function () {
+    return view('home');
+});
 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
+Route::get('/categories',[user_controll::class,'show_categories'])->middleware(['auth', 'verified'])->name('show_cat');
 require __DIR__.'/auth.php';

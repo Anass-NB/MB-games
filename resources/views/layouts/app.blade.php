@@ -29,7 +29,7 @@
             <!-- Page Content -->
             <style>
     @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-}
+
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 .fa-2x {
 font-size: 2em;
@@ -53,12 +53,12 @@ overflow:visible;
 .main-menu {
 background:#212121;
 border-right:1px solid #e5e5e5;
-position:absolute;
+position:fixed;
 top:0;
 bottom:0;
 height:100%;
 left:0;
-width:60px;
+width:55px;
 overflow:hidden;
 -webkit-transition:width .05s linear;
 transition:width .05s linear;
@@ -163,7 +163,7 @@ height: 100%;
    <div class="area"></div><nav class="main-menu">
             <ul>
                 <li>
-                    <a href="">
+                    <a href="{{route('dashboard')}}">
                         <i class="fa fa-home fa-2x"></i>
                         <span class="nav-text">
                             Dashboard
@@ -181,10 +181,10 @@ height: 100%;
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="{{route('show_cat')}}">
                        <i class="fa fa-list fa-2x"></i>
                         <span class="nav-text">
-                            Forms
+                            Categories
                         </span>
                     </a>
                     
