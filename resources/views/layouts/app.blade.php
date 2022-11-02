@@ -190,10 +190,10 @@ height: 100%;
                     
                 </li>
                 <li class="has-subnav">
-                    <a href="#">
+                    <a href="{{ url("addgame") }}">
                        <i class="fa fa-folder-open fa-2x"></i>
                         <span class="nav-text">
-                            Pages
+                            Add Game
                         </span>
                     </a>
                    

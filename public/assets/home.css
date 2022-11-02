@@ -3,6 +3,7 @@
 
 :root{
   --main-color : blue;
+  --padding-section : 50px;
 }
 
 
@@ -16,7 +17,7 @@
 
 body {
   font-family: 'Familjen Grotesk', sans-serif;
-  background: #000;
+
   color: #fff;
 }
 
@@ -28,9 +29,88 @@ a {
 ul {
   list-style: none;
 }
+.main-title {
+  margin: 0 auto 80px;
+  color: black;
+  border: 2px solid black;
+  width: fit-content;
+  padding: 10px 20px;
+  font-size: 25px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 22;
+}
+.main-title::before ,
+.main-title::after {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background-color: black;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  top: 50%;
+  transition: 0.5s linear;
+  
+}
+.main-title::before {
+  left: -30px;
+  
+}
+.main-title::after {
+  right: -30px;
+  
+}
+
+.main-title:hover::before {
+  animation: move-left 0.5s linear forwards;
+  z-index: -1;
+}
+.main-title:hover::after {
+  animation: move-right 0.5s linear forwards;
+  z-index: -1;
+
+}
+.main-title:hover {
+  border: 2px solid #ccc;
+  color: white;
+  background-color: black;
+  transition-delay: 0.5s;
+}
+
+@keyframes move-left {
+  50% {
+      left: 0;
+      width: 12px;
+      height: 12px;
+  }
+  100%{
+      width: 50%;
+      height: 100%;
+      border-radius: 0;
+      left: 0;
+  }
+}
+@keyframes move-right {
+  50% {
+      right: 0;
+      width: 12px;
+      height: 12px;
+  }
+  100%{
+      width: 50%;
+      height: 100%;
+      border-radius: 0;
+      right: 0;
+  }
+}
+
+
+
 /* Header/Navbar */
 .main-header {
-  position: fixed;
+  /* position: fixed; */
+  background-color: #000;
   top: 0;
   left: 0;
   width: 100%;
@@ -41,6 +121,11 @@ ul {
   text-transform: uppercase;
   height: 100px;
   padding: 0 30px;
+}
+.first-page {
+  background-color: #000;
+  z-index: 2;
+  position: relative;
 }
 
 /* Logo */
@@ -53,6 +138,10 @@ ul {
   display: block;
   width: 100%;
   height: auto;
+}
+.landing {
+  position: relative;
+  z-index: 111;
 }
 
 /* Desktop Menu */
@@ -129,3 +218,53 @@ transition: .3;
   color: white;
   border: 2px solid white;
 }
+
+/* Start Games */
+.games {
+  padding: var(--padding-section) 0;
+  position: relative;
+  /* background-color: white; */
+}
+
+.games .col-3 {
+  position: relative;
+  transition: .3s;
+  cursor: pointer;
+}
+.games .col-3:hover {
+  transform: translateY(-10px);
+
+}
+.games .col-3 .data {
+    display: flex;
+    align-items: center;
+    padding-top: 55px;
+}
+.games .col-3 .data img{
+    width: calc(100% - 60px);
+    border-radius: 6px;
+    transition: .3s;
+}
+
+
+
+.games .col-3 .info {
+    /* padding-left: 80px; */
+}
+.games .col-3 .info h3{
+    margin: 10px 0;
+    color: #000;
+    font-size: 22px;
+    transition: .3s;
+    transition-delay: .2s;
+}
+.games .col-3:hover .info h3 {
+    color: #000;
+}
+.games .col-3 .info p{
+    margin-bottom: 25px;
+
+}
+/* ُENd Games */
+
+
