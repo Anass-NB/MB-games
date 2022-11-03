@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\user_controll;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,9 +26,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/categories',[user_controll::class,'show_categories'])->middleware(['auth', 'verified'])->name('show_cat');
-
-Route::get("addgame",[GameController::class,"addnewgame"]);
-Route::post("store",[GameController::class,"store"])->name("store_game");
-
+Route::get('/categories',[CategoryController::class,'index'])->middleware(['auth', 'verified'])->name('show_cat');
+Route::post("storingcategory",[CategoryController::class,'store'])->middleware(['auth', 'verified'])->name('category_store');
+Route::get("addgame",[GameController::class,"addnewgame"])->middleware(['auth', 'verified']);
+Route::post("store",[GameController::class,"store"])->middleware(['auth', 'verified'])->name("store_game");
+Route::get("/deletingcategory/{id}",[CategoryController::class,'delete'])->middleware(['auth', 'verified'])->name('category_delete');
+Route::post("/updatecat",[CategoryController::class,'update'])->middleware(['auth', 'verified'])->name('category_update');
+Route::get("/fetchcat/{id}",[CategoryController::class,'fetch'])->middleware(['auth', 'verified'])->name('category_fetch');
 require __DIR__.'/auth.php';

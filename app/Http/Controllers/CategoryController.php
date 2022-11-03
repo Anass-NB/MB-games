@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-
+use DB;
 class CategoryController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $data = DB::table('categories')->get();
+        return view('categories',['data' => $data]);
     }
 
     /**
@@ -35,7 +36,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        DB::table('categories')->insert(["category" => $request->cat]);
+        return redirect()->route('show_cat');
+    }
+    public function delete(Request $request)
+    {
+       DB::table('categories')->where("id",$request->id)->delete();
+       return redirect()->route('show_cat');
     }
 
     /**
@@ -48,7 +56,11 @@ class CategoryController extends Controller
     {
         //
     }
-
+    public function fetch(){
+        if(isset($_GET['id'])) $data = DB::table('categories')->where("id",$_GET['id'])->first();
+        $data1 =array("id" => $data->id,"category" => $data->category);
+        return Response()->json($data1);
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -69,7 +81,8 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        DB::table('categories')->where('id', $_POST['id'])->update(["category"=>$_POST['cat']]);
+        return Response()->json("hello");
     }
 
     /**
@@ -80,6 +93,6 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+       
     }
 }
