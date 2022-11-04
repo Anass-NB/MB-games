@@ -9,7 +9,7 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="{{ URL::asset('assets/home.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/home.css') }}">
     <!-- Bootstrap css  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- Scripts -->
@@ -17,131 +17,123 @@
   </head>
   <body class="font-sans antialiased">
     {{-- Star landing page --}}
-    <div class="landing">
-      <div class="landing-page">
-        <header class="main-header">
+    <div class="landing" style="background-image: url('{{ asset("assets/img/back.jpg") }}');">
+      <div class="overlay"></div>
+      <div class="header">
+        <div class="container">
           <div class="logo">
-            <a href="{{ url("/") }}">
-              WEB GAMES LOGO HERE
-            </a>
+            <img src="{{ asset("images/logo-removebg-preview.png") }}" alt="logo"><a href="#" class="logo"><span>W</span>eb  <span>G</span>ames</a>
           </div>
-          <nav class="desktop-main-menu">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">All Games</a></li>
-              <li><a href="#">Categories</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a class="activebtn" href="{{ route("login") }}">Login</a></li>
-  
-            </ul>
-          </nav>
-        </header>
+          <ul class="main-nav">
+            <li><a href="#games">Games</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#popular">Popular</a></li>
+            <li><a class="active" href="{{ route("login") }}">Login</a></li>
+          </div>       
       </div>
-      <div class="first-page">
-        <div class="img">
-          <img draggable="false" src="{{ asset("images/302775228_403384081725332_1283203408436204244_n.jpg") }}" alt="image">
-        </div>
-        <div class="text">
-          <h3 class="display-2 lead">WEB GAMES</h3>
-          <p>Here You Can find Any Game with A Lot Of Categories.. And Play it Online !</p>
-          <a href="#" class="btn-play">Play Now !</a>
-        </div>
-      </div>
+      <div class="landi" >
+          <div class="text" style="color:white">
+            <p>Find the items & services you need from real players <br> of your favorite games all around the world!</p>
+            
+          </div>
+      </div> 
     </div>
     {{-- ENd landing page --}}
 
     {{-- Start games part --}}
-    <div class="games">
-      <h2 class="main-title">Our Games</h2>
+    <div class="games" id="games">
+      <h2 class="grand-title">Games for everyone. Let's Play.</h2>
       <div class="container">
-        <div class="row g-1">
-          <div class="col-3">
-            <div class="data">
-                <img src="{{ asset("images/game-01.jpg") }}" alt="game">
-            </div>
-            <div class="info">
-                <h3>Name</h3>
-                <p>simple Short Description</p>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="data">
-                <img src="{{ asset("images/game-02.jpg") }}" alt="game">
+        <div class="row g-3">
 
-            </div>
-            <div class="info">
-                <h3>Name</h3>
-                <p>simple Short Description</p>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="data">
-                <img src="{{ asset("images/game-03.jpg") }}" alt="game">
-            </div>
-            <div class="info">
-                <h3>Name</h3>
-                <p>simple Short Description</p>
+          <div class="col">
+            <div class="imgs">
+            <div class="yellow-box"></div>
+            <div class="work-info">       
+              <p>Battle Game</p>
+              <!-- Image Description -->
+              <p>Lorem ipsum dolor sit amet consectetur </p>
+              <a href="#" class="p-game">Play now</a>
+            </div>           
+            <img src="{{ asset("images/game-07.jpg") }}" class="Graphic">
             </div>
           </div>
-          <div class="col-3">
-            <div class="data">
-                <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+          <div class="col">
+            <div class="imgs">
+            <div class="yellow-box"></div>
+            <div class="work-info">       
+              <p>Battle Game</p>
+              <!-- Image Description -->
+              <p>Lorem ipsum dolor sit amet consectetur </p>
+              <a href="#" class="p-game">Play now</a>
+            </div>           
+            <img src="{{ asset("images/game-01.jpg") }}" class="Graphic">
+            </div>
+          </div>
+          <div class="col">
+            <div class="imgs">
+            <div class="yellow-box"></div>
+            <div class="work-info">       
+              <p>Battle Game</p>
+              <!-- Image Description -->
+              <p>Lorem ipsum dolor sit amet consectetur </p>
+              <a href="#" class="p-game">Play now</a>
+            </div>           
+            <img src="{{ asset("images/game-02.jpg") }}" class="Graphic">
+            </div>
+          </div>
+          <div class="col">
+            <div class="imgs">
+            <div class="yellow-box"></div>
+            <div class="work-info">       
+              <p>Battle Game</p>
+              <!-- Image Description -->
+              <p>Lorem ipsum dolor sit amet consectetur </p>
+              <a href="#" class="p-game">Play now</a>
+            </div>           
+            <img src="{{ asset("images/game-03.jpg") }}" class="Graphic">
+            </div>
+          </div>
+          <div class="col">
+            <div class="imgs">
+            <div class="yellow-box"></div>
+            <div class="work-info">       
+              <p>Battle Game</p>
+              <!-- Image Description -->
+              <p>Lorem ipsum dolor sit amet consectetur </p>
+              <a href="#" class="p-game">Play now</a>
+            </div>           
+            <img src="{{ asset("images/game-04.jpg") }}" class="Graphic">
+            </div>
+          </div>
 
-            </div>
-            <div class="info">
-                <h3>Name</h3>
-                <p>simple Short Description</p>
-            </div>
+
+
+        </div>
+
+        <a class="explore_more_games">Explore All Games</a>
+
+      </div>
+    </div>
+    {{-- End games part --}}
+
+    {{-- Start Features --}}
+    <div class="features">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-4">
+            <img src="{{ asset("images/feature-1211.png") }}" alt="feature">
           </div>
-          <div class="col-3">
-            <div class="data">
-                <img src="{{ asset("images/game-04.jpg") }}" alt="game">
-            </div>
-            <div class="info">
-                <h3>Name</h3>
-                <p>simple Short Description</p>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="data">
-                <img src="{{ asset("images/game-05.png") }}" alt="game">
-            </div>
-            <div class="info">
-                <h3>Name</h3>
-                <p>simple Short Description</p>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="data">
-                <img src="{{ asset("images/game-06.png") }}" alt="game">
-            </div>
-            <div class="info">
-                <h3>Name</h3>
-                <p>simple Short Description</p>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="data">
-                <img src="{{ asset("images/game-07.jpg") }}" alt="game">
-            </div>
-            <div class="info">
-                <h3>Name</h3>
-                <p>simple Short Description</p>
-            </div>
-          </div>
-          <div class="col-3">
-            <div class="data">
-                <img src="{{ asset("images/game-08.jpg") }}" alt="game">
-            </div>
-            <div class="info">
-                <h3>Name</h3>
-                <p>simple Short Description</p>
+          <div class="col-8">
+            <div class="text">
+              <h1>Discover <span>+  200 games</span></h1>
+              <p>Go on epic quests and endless fun with top RPG and strategy titles. Try thrilling new Android games on the cloud or play locally on your pc.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    {{-- End games part --}}
+    {{-- End Features --}}
 
   </body>
 </html>

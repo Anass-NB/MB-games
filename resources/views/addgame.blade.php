@@ -32,7 +32,7 @@
               </div>
               <div class="row g-3 ">
                 <div class="col">
-                  {{-- <input type="file" class="form-control" id="inputGroupFile02"> --}}
+                  <input type="file" class="form-control" id="inputGroupFile02">
                 </div>
               </div>
               <button class="btn btn-success mt-3">Add Game</button>
