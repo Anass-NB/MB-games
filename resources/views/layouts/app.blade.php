@@ -172,7 +172,7 @@ height: 100%;
                   
                 </li>
                 <li class="has-subnav">
-                    <a href="">
+                    <a href="{{route('show_games')}}">
                         <i class="fa fa-laptop fa-2x"></i>
                         <span class="nav-text">
                             Web Games

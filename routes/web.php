@@ -29,8 +29,10 @@ Route::get('/dashboard', function () {
 Route::get('/categories',[CategoryController::class,'index'])->middleware(['auth', 'verified'])->name('show_cat');
 Route::post("storingcategory",[CategoryController::class,'store'])->middleware(['auth', 'verified'])->name('category_store');
 Route::get("addgame",[GameController::class,"addnewgame"])->middleware(['auth', 'verified']);
-Route::post("store",[GameController::class,"store"])->middleware(['auth', 'verified'])->name("store_game");
+Route::post("/store",[GameController::class,"store"])->middleware(['auth', 'verified'])->name("store_game");
 Route::get("/deletingcategory/{id}",[CategoryController::class,'delete'])->middleware(['auth', 'verified'])->name('category_delete');
 Route::post("/updatecat",[CategoryController::class,'update'])->middleware(['auth', 'verified'])->name('category_update');
 Route::get("/fetchcat/{id}",[CategoryController::class,'fetch'])->middleware(['auth', 'verified'])->name('category_fetch');
+Route::get('/webgames',[GameController::class,'index'])->middleware(['auth', 'verified'])->name('show_games');
+Route::get('/retrievewebgames',[GameController::class,'retrievegames'])->middleware(['auth', 'verified'])->name('retrieve_games');
 require __DIR__.'/auth.php';

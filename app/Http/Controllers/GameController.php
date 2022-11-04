@@ -11,7 +11,8 @@ class GameController extends Controller
     
 
     public function addnewgame(){
-        return view("addgame");
+        $cat = DB::table('categories')->get();
+        return view("addgame",['cat' => $cat]);
     }
     /**
      * Display a listing of the resource.
@@ -20,7 +21,12 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        
+        return view("webgames");
+    }
+    public function retrievegames(){
+        $data = DB::table('games')->get();
+        return Response()->json($data);
     }
 
     /**
@@ -39,15 +45,10 @@ class GameController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        $game = new Game;
-        $game->title = $request->title;
-        $game->description = $request->description;
-        $game->category = $request->category;
-        $game->url = $request->url;
-        $game->save();
-        return view("dashboard");
+       
+        return Response()->json("success");
     }
 
     /**

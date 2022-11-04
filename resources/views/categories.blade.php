@@ -13,7 +13,7 @@
         
 @csrf
 
-<input type="text" value="" id="cat" name="cat">
+<input type="text" value="" id="cat" name="cat" required>
 <button type="submit" class="btn btn-success" id="add" style="position:relative;">
 <i class="fa fa-plus" >Add category</i>
 

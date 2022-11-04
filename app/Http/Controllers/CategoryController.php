@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use DB;
+use Hash;
 class CategoryController extends Controller
 {
     /**
@@ -42,6 +43,7 @@ class CategoryController extends Controller
     }
     public function delete(Request $request)
     {
+        
        DB::table('categories')->where("id",$request->id)->delete();
        return redirect()->route('show_cat');
     }
