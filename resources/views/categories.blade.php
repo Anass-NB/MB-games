@@ -56,7 +56,7 @@
       <div class="modal-body">
       <form id="formup" method="post" action="{{route('category_update')}}" >
         @csrf
-            <input type="hidden" name="csrf" id="csrf" value="{{session('csrf_token')}}">
+            
             <input type="hidden" name="id" id="id" value="">
             <input type="text" name="cat1" id="cat1" value="">
         </form>

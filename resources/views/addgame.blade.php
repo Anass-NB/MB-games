@@ -1,15 +1,15 @@
 <x-app-layout>
   <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link href="{{ url('/') }}/bootstrap/bootstrap5.css" rel="stylesheet" >
   <div class="container  card-content "  >
     <h1 class="lead text-muted  display-3  my-2">Add New Game</h1>
     <div class="add-game">
 
       <div class="card">
         <div class="card-header">Game</div>
-          <form  action="" enctype="multipart/form-data">
+          <form  action="" method="post" enctype="multipart/form-data" id="game_form">
             @csrf
-            <input type="hidden" name="csrf" id="csrf" value="{{session('csrf_token')}}">
+           
             <div class="card-body bg">
               <div class="row g-3">
                 <div class="col-3">
@@ -39,10 +39,10 @@
               </div>
               <div class="row g-3 ">
                 <div class="col">
-                  <input type="file" class="form-control" id="image" required>
+                  <input type="file" class="form-control" id="image" name="image" required>
                 </div>
               </div>
-              <button class="btn btn-success mt-3 addbutton">Add Game</button>
+              <button class="btn btn-success mt-3 " type="submit">Add Game</button>
           </form>
         </div>
       </div>
@@ -61,31 +61,45 @@
 <script type="text/javascript" src="{{ url('/') }}/Jquery/jquery_Datatable.js"></script>
 <script>
   $.ajaxSetup({
-      headers: {
-        'X-CSSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      }
-    });
-  $(document).ready(function(){
-    $('.addbutton').click(function(){
-      var title = $('#title').val();
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+   
+});
+
+    $('#game_form').submit(function(e){
+      e.preventDefault();
+      var formData = new FormData($(this)[0]);
+   formData.append("image","heeu");
+     
+      /*var title = $('#title').val();
       var description = $('#description').val();
      
       var cat_id = $('#category').val();
       var url = $('#url').val();
-      var image = $('#image').val();
-      if(cat_id!="" && url!=""){
+      var image = $('#image').files[0];
+      alert(image);*/
+      var url_route = "{{route('store_game')}}";
+      
         $.ajax({
-        url : "{{route('store_game')}}",
+        url : url_route,
         type : 'POST',
+        
         data:{
             _token:'{{csrf_token()}}',
-            title : title,
+           /* title : title,
             description : description,
             cat_id : cat_id,
             url : url,
-            
+            image : image,*/
+            formData,
         },
+        contentType: false,
+        processData: false,
+        cache: false,
         success: function(data){
+          console.log(data);
           Swal.fire({
   position: 'top',
   icon: 'success',
@@ -93,12 +107,24 @@
   showConfirmButton: false,
   timer: 1500
 })
+        },
+        error: function(data){
+          var errors = data.responseJSON;
+                console.log(errors);
         }
       })
-      }
+      /*else{
+        Swal.fire({
+  position: 'top',
+  icon: 'error',
+  title: 'give all data',
+  showConfirmButton: false,
+  timer: 1500
+})
+      }*/
   });
       
-    })
+
    
 
      

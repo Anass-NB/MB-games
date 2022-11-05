@@ -45,10 +45,11 @@ class GameController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
        
-        return Response()->json("success");
+        DB::table('categories')->insert(["category" => $request->title]);
+        return Response()->json();
     }
 
     /**

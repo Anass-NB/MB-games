@@ -17,9 +17,10 @@ return new class extends Migration
         $table->id();
         $table->string("title");
         $table->string("description");
-        $table->integer("category_id");
+        $table->bigInteger("category_id")->unsigned();
         $table->string("url");
         $table->string("image");
+        $table->foreign("category_id")->references("id")->on("categories");
         $table->timestamps();
     });
   }
