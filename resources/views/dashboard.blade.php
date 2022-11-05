@@ -11,8 +11,8 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title">All Games</h5>
-                <p class="lead">13 Game published</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="lead text-success">{{ $number_of_games }} Game published</p>
+                <p class="card-text"><small class="text-muted">Last Game inserted at ({{ $date_create_last_game->created_at }})</small></p>
               </div>
             </div>
           </div>
@@ -27,8 +27,8 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title">All Games</h5>
-                <p class="lead">13 Game published</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="lead text-success">{{ $number_of_users }} Admins </p>
+                <p class="card-text"><small class="text-muted"></small></p>
               </div>
             </div>
           </div>

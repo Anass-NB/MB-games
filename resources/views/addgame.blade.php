@@ -7,7 +7,7 @@
 
       <div class="card">
         <div class="card-header">Game</div>
-          <form  action="" enctype="multipart/form-data">
+          <form  action="{{ route("store_game") }}" method="POST" enctype="multipart/form-data">
             @csrf
             <input type="hidden" name="csrf" id="csrf" value="{{session('csrf_token')}}">
             <div class="card-body bg">

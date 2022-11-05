@@ -47,9 +47,15 @@ class GameController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-       
+        Game::create([
+            "title" => $request->title,
+            "description" => $request->description,
+            "url" => $request->url,
+            "description" => $request->description,
+            "description" => $request->description,
+        ]);
         return Response()->json("success");
     }
 
