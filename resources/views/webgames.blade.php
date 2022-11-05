@@ -7,7 +7,26 @@
     <div class="content pb-3" style="margin-left:40px;">
             <div class="container-fluid">
                 <div class="card p-2 mb-0">
-                    <table id="students_table"></table>
+                    <div class="row">
+                        @foreach ($allgames  as $game)
+                            <div class="col-4">
+                                <div class="card">
+                                    <div class="card-header text-center">Game {{ $game->title }}</div>
+                                    <div class="card-body text-center">
+                                        <h3 class="lead"> Description : {{ $game->description }}</h3>
+                                        <img src="" alt="game image">   
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        <a href="#" class="btn btn-primary">Play</a>
+                                        <a href="{{ route("edit_game") }}" class="btn btn-success">Edit</a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
+
+                    
                 </div>
             </div>
         </div>

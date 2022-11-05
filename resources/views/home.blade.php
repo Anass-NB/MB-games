@@ -134,6 +134,10 @@
       </div>
     </div>
     {{-- End Features --}}
+    <div class="container">
+      <h1>Hello</h1>
+      <a href="" class="btn btn-primary">Hekl</a>
+    </div>
 
   </body>
 </html>

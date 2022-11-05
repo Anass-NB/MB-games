@@ -21,8 +21,10 @@ class GameController extends Controller
      */
     public function index()
     {
-        
-        return view("webgames");
+        $all_games = Game::all();
+        return view("webgames")->with([
+            "allgames" => $all_games,
+        ]);
     }
     public function retrievegames(){
         $data = DB::table('games')->get();
@@ -47,9 +49,20 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
        
         DB::table('categories')->insert(["category" => $request->title]);
         return Response()->json();
+=======
+        Game::create([
+            "title" => $request->title,
+            "description" => $request->description,
+            "url" => $request->url,
+            "description" => $request->description,
+            "description" => $request->description,
+        ]);
+        return Response()->json("success");
+>>>>>>> ff8ce14b1ec74eb48a9206c24d29c983a9e2b1e6
     }
 
     /**
@@ -71,7 +84,7 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
-        //
+        return view("editgame");
     }
 
     /**

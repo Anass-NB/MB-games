@@ -7,7 +7,11 @@
 
       <div class="card">
         <div class="card-header">Game</div>
+<<<<<<< HEAD
           <form  action="" method="post" enctype="multipart/form-data" id="game_form">
+=======
+          <form  action="{{ route("store_game") }}" method="POST" enctype="multipart/form-data">
+>>>>>>> ff8ce14b1ec74eb48a9206c24d29c983a9e2b1e6
             @csrf
            
             <div class="card-body bg">
