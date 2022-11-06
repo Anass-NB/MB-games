@@ -7,11 +7,7 @@
 
       <div class="card">
         <div class="card-header">Game</div>
-<<<<<<< HEAD
           <form  action="" method="post" enctype="multipart/form-data" id="game_form">
-=======
-          <form  action="{{ route("store_game") }}" method="POST" enctype="multipart/form-data">
->>>>>>> ff8ce14b1ec74eb48a9206c24d29c983a9e2b1e6
             @csrf
            
             <div class="card-body bg">
@@ -67,47 +63,52 @@
   $.ajaxSetup({
   headers: {
     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-    'Content-Type': 'application/x-www-form-urlencoded'
+   // 'Content-Type': 'application/json'
   }
    
 });
 
     $('#game_form').submit(function(e){
       e.preventDefault();
-      var formData = new FormData($(this)[0]);
-   formData.append("image","heeu");
      
+  
+      var thisBtn = $(this);
+    var thisForm = thisBtn.closest("form");
+    var formData = new FormData(thisForm[0]);
       /*var title = $('#title').val();
       var description = $('#description').val();
+     // var image= $('input[name="image"]')[0].files; 
      
       var cat_id = $('#category').val();
-      var url = $('#url').val();
-      var image = $('#image').files[0];
-      alert(image);*/
+      var url = $('#url').val();*/
+   
       var url_route = "{{route('store_game')}}";
-      
+  
         $.ajax({
         url : url_route,
         type : 'POST',
-        
-        data:{
+        processData: false,
+        contentType: false,
+        data : formData,
+       /* data:{
             _token:'{{csrf_token()}}',
-           /* title : title,
+            title : title,
             description : description,
             cat_id : cat_id,
             url : url,
-            image : image,*/
-            formData,
-        },
-        contentType: false,
-        processData: false,
-        cache: false,
+            image : image,
+           
+            
+        },*/
+       
+      
+        
         success: function(data){
-          console.log(data);
+          console.log(data.title);
           Swal.fire({
   position: 'top',
   icon: 'success',
-  title: 'Game added successfully',
+  title: 'Game ' + data.title +' added successfully',
   showConfirmButton: false,
   timer: 1500
 })

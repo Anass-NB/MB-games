@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Storage;
+use Validator;
 class GameController extends Controller
 {
     
@@ -49,9 +50,29 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
+        $image = $_FILES['image']['type'];
+        $validated = Validator::make(
+            array('image' => $image),
+            array($image => 'required| mimes: jpeg, png, jpg')
+            
+            
+        );
+        $filename = $_FILES['image']['name'];
+        $path = $request->file('image')->storeAs(
+            '/',$filename, 'mouradi_disk'
+        );
+        
+           //Storage::disk('mouradi_disk')->put('/',$_FILES['image']);
+            
+
+            
+            DB::table('games')->insert(['title' => $_POST['title'],'description' => $_POST['description'],'category_id' => $_POST['category'],'url' 
+            => $_POST['url'],'image' => $_FILES['image']['name']]);
+        
+    
+    $data = array('title' => $request->file('image'));
+    return Response()->json($data);
        
-        DB::table('categories')->insert(["category" => $request->title]);
-        return Response()->json();
     }
 
     /**
