@@ -190,6 +190,9 @@
               <li><a href="#games">About</a></li>
             </ul>
           </div>
+          <div class="col justify-content-center d-flex align-items-center">
+            <a href="{{ url("/allgames") }}" class="footer-btn">Web Games</a>
+          </div>
           <div class="col">
             <h2 class="lead foot-title">Contact US</h2>
             <ul class="foot-links">

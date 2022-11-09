@@ -596,6 +596,22 @@ div.col{
 .foot-links a:hover{
   color: var(--green-color);
 }
+.footer-btn {
+  background-color: var(--green-color);
+  color: black;
+  font-size: 23px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  box-shadow: 1px 1px 1px var(--green-color);
+  transition: .2s;
+  border: 2px solid var(--green-color);
+}
+.footer-btn:hover {
+  /* background-color: transparent;
+  border: 2px solid var(--green-color); */
+  color: black;
+  box-shadow: 0px 0px 13px 5px var(--green-color);
+}
 /* End footer */
 
 /* Categories */
@@ -614,3 +630,5 @@ div.col{
   background-image: linear-gradient(to left bottom, #0c283d, #04243e, #00203e, #001c3e, #00173d, #022650, #023565, #004679, #0072a0, #009eaa, #00c699, #97e97c);
 }
 /* End ALl games HTML */
+
+

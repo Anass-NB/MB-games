@@ -22,7 +22,7 @@
           <img src="{{ asset("images/lloooogo.png") }}" alt="logo"><a href="{{ route("home_front") }}" class="logo"><span>W</span>eb  <span>G</span>ames</a>
         </div>
         <ul class="main-nav bg-sss">
-          <li><a href="#games">Games</a></li>
+          <li><a href="{{ url("/") }}">Games</a></li>
           <li><a href="#categories">Categories</a></li>
           <li><a href="#popular">Popular</a></li>
           <li><a class="active" href="{{ route("login") }}">Login</a></li>
@@ -189,9 +189,22 @@
         </div>
       </div>
     </div>
+
+
+      {{-- start sub-footer --}}
+      <div class="subfooter ">
+        <p class="lead text-center text-light py-2">Created by <span style="color: var(--green-color)">Nabil</span> & <span style="color: var(--green-color)">Mouradi</span> &copy;</p>
+      </div>
+      {{-- End sub-footer --}}
+  
+
+
   </div>
-{{-- End Games --}}   
+  
+  {{-- End Games --}}   
   {{-- ENd landing page --}}
+
+   
 
 
 

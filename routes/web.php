@@ -5,18 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Models\Game;
 use Illuminate\Support\Facades\DB;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('home');
 })->name("home_front");
@@ -48,7 +36,7 @@ Route::controller(CategoryController::class)->group(function (){
     Route::get("/deletingcategory/{id}",'delete')->middleware(['auth', 'verified'])->name('category_delete');
     Route::post("/updatecat",'update')->middleware(['auth', 'verified'])->name('category_update');
     Route::get("/fetchcat/{id}",'fetch')->middleware(['auth', 'verified'])->name('category_fetch');
-    
+
 });
 
 //Route Group Of Game Controller
