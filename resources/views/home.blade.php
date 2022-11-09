@@ -4,14 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <link rel="icon" type="image/x-icon" href="{{ asset("images/favicon.png") }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+    {{-- <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
     <link rel="stylesheet" href="{{ URL::asset('assets/css/home.css') }}">
     <!-- Bootstrap css  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
@@ -20,12 +21,12 @@
     <div class="landing" style="background-image: url('{{ asset("assets/img/back.jpg") }}');">
       <div class="overlay"></div>
       <div class="header">
-        <div class="container">
+        <div class="container2 flex justify-content-between">
           <div class="logo">
-            <img src="{{ asset("images/logo-removebg-preview.png") }}" alt="logo"><a href="#" class="logo"><span>W</span>eb  <span>G</span>ames</a>
+            <img src="{{ asset("images/lloooogo.png") }}" alt="logo"><a href="{{ route("home_front") }}" class="logo"><span>W</span>eb  <span>G</span>ames</a>
           </div>
           <ul class="main-nav">
-            <li><a href="#games">Games</a></li>
+            <li><a href="{{ url("/allgames") }}">Games</a></li>
             <li><a href="#categories">Categories</a></li>
             <li><a href="#popular">Popular</a></li>
             <li><a class="active" href="{{ route("login") }}">Login</a></li>
@@ -43,7 +44,7 @@
     {{-- Start games part --}}
     <div class="games" id="games">
       <h2 class="grand-title">Games for everyone. Let's Play.</h2>
-      <div class="container">
+      <div class="container2">
         <div class="row g-3">
 
           <div class="col">
@@ -111,7 +112,7 @@
 
         </div>
 
-        <a class="explore_more_games">Explore All Games</a>
+        <a class="explore_more_games" href="{{ url("/allgames") }}">Explore All Games</a>
 
       </div>
     </div>
@@ -119,7 +120,7 @@
 
     {{-- Start Features --}}
     <div class="features">
-      <div class="container">
+      <div class="container2">
         <div class="row justify-content-between align-items-center">
           <div class="col-4">
             <img src="{{ asset("images/feature-1211.png") }}" alt="feature">
@@ -134,10 +135,91 @@
       </div>
     </div>
     {{-- End Features --}}
-    <div class="container">
-      <h1>Hello</h1>
-      <a href="" class="btn btn-primary">Hekl</a>
+
+
+
+
+
+
+    <div class="statics">
+      <div class="container2">
+        <h2>Our Statistics</h2>
+        <div class="row mt-4">
+          <div class="col py-4 text-center bg-primary text-white text-center">
+            <i class="fa-solid fa-gamepad d-flex justify-content-center"></i>
+            <span class="text-dark">23</span>
+            <h4>All Games</h4>
+          </div>
+          <div class="col py-4 text-center bg-white text-dark text-center">
+            <i class="fa-solid fa-list d-flex justify-content-center"></i>
+            <span>16</span>
+            <h4>Categories</h4>
+          </div>
+          <div class="col py-4 text-center bg-primary text-white text-center">
+            <i class="fa-solid fa-user d-flex justify-content-center"></i>
+            <span class="text-dark">40</span>
+            <h4>Online players</h4>
+          </div>
+          <div class="col py-4 text-center bg-white text-dark text-center">
+            <i class="fa-solid fa-earth-americas d-flex justify-content-center"></i>
+            <span>9</span>
+            <h4>Countries</h4>
+          </div>
+        </div>
+      </div>
     </div>
+
+
+
+
+    {{-- Start Footer --}}
+    <div class="footer text-white">
+      <div class="container2">
+        <div class="row">
+          <div class="col">
+            <img src="{{ asset("images/lloooogo.png") }}" alt="logo">
+            <h4 class="lead text-muted">Web Games</h4>
+            <p>Play all games in our web site online!</p>
+          </div>
+          <div class="col">
+            <h2 class="lead foot-title">Links</h2>
+            <ul class="foot-links">
+              <li><a href="#games">Our Games</a></li>
+              <li><a href="#categories">Categories</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#games">About</a></li>
+            </ul>
+          </div>
+          <div class="col justify-content-center d-flex align-items-center">
+            <a href="{{ url("/allgames") }}" class="footer-btn">Web Games</a>
+          </div>
+          <div class="col">
+            <h2 class="lead foot-title">Contact US</h2>
+            <ul class="foot-links">
+              <li><a href="#games">Facebook <i class="ms-3 fa-brands fa-facebook-f"></i> </a></li>
+              <li><a href="#categories">Mail <i class="ms-5 fa-solid fa-envelope"></i></a></li>
+              <li><a href="#contact">Github <i  class="ms-4 fa-brands fa-github"></i></a></li>
+            </ul>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    {{-- End Footer --}}
+
+    {{-- start sub-footer --}}
+    <div class="subfooter">
+      <p class="lead text-center bg-dark text-light py-2">Created by <span style="color: var(--green-color)">Nabil</span> & <span style="color: var(--green-color)">Mouradi</span> &copy;</p>
+    </div>
+    {{-- End sub-footer --}}
+
+
+
+
+
+
+
+
 
   </body>
 </html>

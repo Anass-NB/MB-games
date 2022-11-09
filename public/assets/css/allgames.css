@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+:root{
+  --main-color : #2196f3;
+  --alt-color : #fff;
+  --alt2-color : #04103b;
+  --linear-color : linear-gradient(180deg,#04103b,#0c283d 94.19%);
+  --green-color : #97e97c;
+  --padding-section : 50px;
+}
+::selection {
+  background-color: var(--green-color);
+  color: black;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.504);
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--green-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+.container2 {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width: 768px){
+  .container2 {
+      width: 750px;
+  }
+
+}
+/* Medium */
+@media (min-width: 992px){
+  .container2 {
+      width: 970px;
+  }
+
+}
+/* Large */
+@media (min-width: 1200px){
+  .container2 {
+      width: 1170px;
+  }
+
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Familjen Grotesk', sans-serif;
+
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+.header {
+  /* background-color: white; */
+  backdrop-filter: blur(40px);
+  box-shadow: 0 0 10px var(--green-color);
+  -webkit-box-shadow : 0 0 10px var(--green-color);
+  -moz-box-shadow: 0 0 10px var(--green-color);
+  position: relative;
+}
+.header .container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.header .logo{
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  height: 73px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.header .logo span {
+  color: var(--green-color);
+}
+.header .logo img {
+  height: 75px;
+}
+@media (max-width: 767px){
+  .header .logo{
+      width: 100%;
+      height: 50px;
+  }
+}
+.header .main-nav{
+  display: flex;
+
+}
+.header .main-nav .active {
+  color: var(--green-color);
+}
+@media (max-width: 767px){
+  .header .main-nav{
+      margin: auto;
+  }
+}
+.header .main-nav > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 73px;
+  padding: 0 30px;
+  color: white;
+  position: relative;
+  transition: .3s;
+  overflow: hidden;
+
+}
+@media (max-width: 767px){
+  .header .main-nav > li > a{
+      height: 40px;
+      padding: 16px;
+      font-size: 14px;
+  }
+}
+.header .main-nav > li > a::before {
+  position: absolute;
+  content: "";
+  background-color: var(--green-color);
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left: -100%;
+}
+
+.header .main-nav > li > a:hover {
+  color: var(--green-color);
+  /* background-color: #fafafa; */
+}
+.header .main-nav > li > a:hover::before {
+  left: 0;
+  transition: .3s;
+}
+
+/* End Header */
+
+
+/* Start landi */
+.landing {
+  /* background-image: url("{{ asset('assets/img/backg.jpg') }}") ; */
+  /* height: 100vh; */
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+}
+.landing .header , .landi{
+  z-index: 222;
+
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.665);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+}
+.landi {
+  /* position: relative; */
+}
+.landi .text p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 2222;
+  font-family: 'Grenze Gotisch', cursive;
+  font-size: 36px;
+  color: #97e97c;
+}
+/* Start landi */
+.allgameshtml {
+  background-image: linear-gradient(to left bottom, #0c283d, #04243e, #00203e, #001c3e, #00173d, #022650, #023565, #004679, #0072a0, #009eaa, #00c699, #97e97c);
+  background-repeat: no-repeat;
+}
+
+
+.nameofcategory {
+
+  font-family: 'Train One', cursive;
+  color: white;
+  font-size: 35px;
+  margin: 23px 0;
+
+}
+.games {
+  position: relative;
+  z-index: 1;
+}
+
+.category .col{
+  transition: .2s;
+}
+.category .col:hover {
+  transform: scale(1.1);
+  /* transform: translateY(-5px); */
+}
+.category .col img{
+  height: 150px;
+  border-radius: 8px;
+}
+.category .col h5{
+  color: var(--green-color);
+  font-size: 16px;
+    margin: 5px 0;
+}
+
+.subfooter {
+  padding: 30px 0 1px ;
+  position: relative;
+  z-index: 2;
+}
+
