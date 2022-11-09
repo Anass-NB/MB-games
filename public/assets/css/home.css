@@ -4,12 +4,62 @@
 :root{
   --main-color : #2196f3;
   --alt-color : #fff;
+  --alt2-color : #04103b;
   --linear-color : linear-gradient(180deg,#04103b,#0c283d 94.19%);
   --green-color : #97e97c;
   --padding-section : 50px;
 }
+::selection {
+  background-color: var(--green-color);
+  color: black;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.504);
 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--green-color);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+.container2 {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width: 768px){
+  .container2 {
+      width: 750px;
+  }
+
+}
+/* Medium */
+@media (min-width: 992px){
+  .container2 {
+      width: 970px;
+  }
+
+}
+/* Large */
+@media (min-width: 1200px){
+  .container2 {
+      width: 1170px;
+  }
+
+}
 *,
 *::before,
 *::after {
@@ -236,7 +286,7 @@ ul {
   color: var(--green-color);
 }
 .header .logo img {
-  height: 50px;
+  height: 75px;
 }
 @media (max-width: 767px){
   .header .logo{
@@ -443,3 +493,124 @@ div.col{
 .work-info .p-game:hover {
   background: transparent;
 }
+.statics {
+  padding: var(--padding-section);
+  background: linear-gradient(270.33deg,var(--alt2-color) .4%,rgba(155,206,91,.48) 98.62%);
+}
+
+.statics .container2 h2{
+  text-align: center;
+  font-size: 66px;
+  font-weight: bold;
+  color: white;
+
+}
+.statics .container2 .row {
+  gap: 30px;
+}
+.statics .container2 .row .col{
+
+  position: relative;
+
+}
+.statics .container2 .row .col i{
+  font-size: 33px;
+}
+.statics .container2 .row .col span{
+  font-size: 44px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+.statics .container2 .row .col h4{
+  font-size: 30px;
+  letter-spacing: -1.5px;
+}
+
+.statics .container2 .col::after ,
+.statics .container2 .col::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background-color: black;
+    transition: 1s;
+    height: 0;
+}
+.statics .container2 .col:after {
+    top: 0;
+    right: 0;
+}
+.statics .row .col::before {
+    bottom: 0;
+    left: 0;
+}
+
+.statics .container2 .col:hover:after,
+.statics .row .col:hover::before {
+    height:100%;
+}
+
+/* Start footer */
+.footer {
+  padding: var(--padding-section) 0;
+  background: linear-gradient(0deg,#050000 71.96%,#510000 100%);
+}
+.footer .container2{
+
+}
+.footer .container2 .col img{
+  height: 100px;
+}
+.footer .container2 .col h4{
+  font-size: 26px;
+
+  color: var(--green-color) !important;
+}
+.footer .container2 .col p{
+  font-size: 17px;
+  letter-spacing: 1.6px;
+  margin: 5px 0 0;
+}
+.foot-title {
+  color: var(--green-color);
+  margin-top: 19px;
+  font-size: 36px !important;
+}
+.foot-links {
+  margin-top: 10px;
+}
+.foot-links li{
+  margin-top: 5px;
+  transition: .3s;
+  width: fit-content;
+}
+.foot-links li:hover{
+  margin-left: 10px;
+}
+.foot-links li::before{
+  color: var(--green-color);
+  content: '\f00c';
+  margin-right: 10px;
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+.foot-links a:hover{
+  color: var(--green-color);
+}
+/* End footer */
+
+/* Categories */
+.categories {
+  padding: var(--padding-section) 0;
+  background: var(--linear-color) ;
+  color: white;
+}
+/* Categories */
+
+
+
+
+/* Start ALl games HTML */
+.allgameshtml {
+  background-image: linear-gradient(to left bottom, #0c283d, #04243e, #00203e, #001c3e, #00173d, #022650, #023565, #004679, #0072a0, #009eaa, #00c699, #97e97c);
+}
+/* End ALl games HTML */
