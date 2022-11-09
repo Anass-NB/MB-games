@@ -22,14 +22,33 @@ class GameController extends Controller
      */
     public function index()
     {
-        $all_games = Game::all();
-        return view("webgames")->with([
-            "allgames" => $all_games,
-        ]);
+        
+        return view("webgames");
     }
     public function retrievegames(){
-        $data = DB::table('games')->get();
-        return Response()->json($data);
+        $data = DB::table('games')
+        ->join('categories','categories.id','=','games.category_id')
+        ->select("games.*",'categories.category as category')
+        ->get();
+      
+       
+        
+        foreach($data as $data){
+            $data1[] = [
+                'title' => $data->title,
+                'category' => $data->category,
+                'url' => $data->url,
+                'image' => "<img id=".'imggame'." src=".asset('game_image/'.$data->image)."/>",
+                'description' => $data->description,
+               
+            ];
+        }
+        $json_data = array(
+            "data"            => $data1
+        );
+        return Response()->json($json_data);
+
+        
     }
 
     /**

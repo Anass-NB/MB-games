@@ -4,37 +4,27 @@
     <link rel="stylesheet" href="{{url('/')}}/bootstrap/bootstrap5.css" >
 
 
-    <div class="content pb-3" style="margin-left:40px;">
-            <div class="container-fluid">
-                <div class="card p-2 mb-0">
-                    <div class="row">
-                        @foreach ($allgames  as $game)
-                            <div class="col-4">
-                                <div class="card">
-                                    <div class="card-header text-center">Game {{ $game->title }}</div>
-                                    <div class="card-body text-center">
-                                        <h3 class="lead"> Description : {{ $game->description }}</h3>
-                                        <img src="" alt="game image">   
-                                    </div>
-                                    <div class="card-footer text-center">
-                                        <a href="#" class="btn btn-primary">Play</a>
-                                        <a href="{{ route("edit_game") }}" class="btn btn-success">Edit</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-
-                    </div>
-
-                    
-                </div>
-            </div>
-        </div>
+   
 
 
-
-
-
+<div class="container">
+    <div >
+<table  id="games" class="cell-border compact stripe">
+<thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Url</th>
+                            <th>Image(click for fullscreen)</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+</table>
+</div>
+</div>
 
 
 
@@ -46,16 +36,68 @@
 
 <script type="text/javascript" src="{{ url('/') }}/Jquery/jquery_script.js"></script>
 <script type="text/javascript" src="{{ url('/') }}/Jquery/jquery_Datatable.js"></script>
+
 <script type="text/javascript">
-    $.ajax({
-            url : '{{route('retrieve_games')}}',
-            type : 'GET',
-            success : function(response){
-                alert(response);
-            }
-        })
-    var table = $('#games').DataTable({
-       
+     $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+      
+           
+   $(document).ready(function(){
+    
+            $('#games').DataTable({
+                "processing": true,
+                "dataType" : "json",
+                "serverSide": true,
+                "ajax":{
+                    "url": '{{route('retrieve_games')}}',
+                    
+                    "type": "POST",
+                    },
+                   
+                "columns": [
+                    { "data": "title"},
+                    { "data": "category"},
+                    { "data": "url"},
+                    { "data": "image"},
+                    { "data": "description"}
+                ],
+                "columnDefs": [ {
+                    "targets": [0,4],
+                    "orderable": false
+                } ],
+                "order": [[ 1, "ASC"]],
+
+            });
+ 
+        $(document).ready(function() {
+            $('#games').DataTable();
+            
+          
+        } );
     });
+  
+   
+    
+    
+</script>
+<script>
+    
+          $(document).ready(function(){
+
+            Swal.fire({
+  position: 'top',
+  icon: 'success',
+  title: 'Games loaded successfully',
+  showConfirmButton: false,
+  timer: 1500
+})
+                 $( document ).on( "click","#imggame", function() {
+            this.requestFullscreen();
+  //$( ".result" ).load( "ajax/test.html" );
+});
+            })
 </script>
 </x-app-layout>

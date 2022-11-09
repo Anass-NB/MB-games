@@ -42,6 +42,6 @@ Route::get("/deletingcategory/{id}",[CategoryController::class,'delete'])->middl
 Route::post("/updatecat",[CategoryController::class,'update'])->middleware(['auth', 'verified'])->name('category_update');
 Route::get("/fetchcat/{id}",[CategoryController::class,'fetch'])->middleware(['auth', 'verified'])->name('category_fetch');
 Route::get('/webgames',[GameController::class,'index'])->middleware(['auth', 'verified'])->name('show_games');
-Route::get('/retrievewebgames',[GameController::class,'retrievegames'])->middleware(['auth', 'verified'])->name('retrieve_games');
+Route::post('/retrievewebgames',[GameController::class,'retrievegames'])->middleware(['auth', 'verified'])->name('retrieve_games');
 
 require __DIR__.'/auth.php';
