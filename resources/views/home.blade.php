@@ -18,7 +18,7 @@
   </head>
   <body class="font-sans antialiased">
     {{-- Star landing page --}}
-    <div class="landing" style="background-image: url('{{ asset("assets/img/back.jpg") }}');">
+    <div class="landing" style="background-image: url('{{ asset("images/back1.jpg") }}');">
       <div class="overlay"></div>
       <div class="header">
         <div class="container2 flex justify-content-between">
@@ -28,7 +28,7 @@
           <ul class="main-nav">
             <li><a href="{{ url("/allgames") }}">Games</a></li>
             <li><a href="#categories">Categories</a></li>
-            <li><a href="#popular">Popular</a></li>
+            <li><a href="#top-3">Popular</a></li>
             <li><a class="active" href="{{ route("login") }}">Login</a></li>
           </div>       
       </div>
@@ -132,6 +132,17 @@
             </div>
           </div>
         </div>
+        <div class="row pb-4 justify-content-between align-items-center">
+          <div class="col-8">
+            <div class="text">
+              <h1>Play games online or on your PC </h1>
+              <p>Go on epic quests and endless fun with top RPG and strategy titles. Try thrilling new Android games on the cloud or play locally on your pc.</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <img src="{{ asset("images/feature-2211.png") }}" alt="feature">
+          </div>
+        </div>
       </div>
     </div>
     {{-- End Features --}}
@@ -145,22 +156,22 @@
       <div class="container2">
         <h2>Our Statistics</h2>
         <div class="row mt-4">
-          <div class="col py-4 text-center bg-primary text-white text-center">
+          <div class="col py-4 text-center  text-white text-center">
             <i class="fa-solid fa-gamepad d-flex justify-content-center"></i>
-            <span class="text-dark">23</span>
+            <span>23</span>
             <h4>All Games</h4>
           </div>
-          <div class="col py-4 text-center bg-white text-dark text-center">
+          <div class="col py-4 text-center  text-white text-center">
             <i class="fa-solid fa-list d-flex justify-content-center"></i>
             <span>16</span>
             <h4>Categories</h4>
           </div>
-          <div class="col py-4 text-center bg-primary text-white text-center">
+          <div class="col py-4 text-center  text-white text-center">
             <i class="fa-solid fa-user d-flex justify-content-center"></i>
-            <span class="text-dark">40</span>
+            <span>40</span>
             <h4>Online players</h4>
           </div>
-          <div class="col py-4 text-center bg-white text-dark text-center">
+          <div class="col py-4 text-center  text-white text-center">
             <i class="fa-solid fa-earth-americas d-flex justify-content-center"></i>
             <span>9</span>
             <h4>Countries</h4>
@@ -169,10 +180,39 @@
       </div>
     </div>
 
+    {{-- Start Top3 games --}}
+    <div class="top-3" id="top-3">
+      <h2 class="text-center">Top 3 Games</h2>
+      <div class="container2">
+        <div class="row my-5 text-center">
+          <div class="col-4">
+            <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+            <h3>Find it 2022</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <a href="#">Play now</a>
+          </div>
+          <div class="col-4">
+            <img src="{{ asset("images/game-02.jpg") }}" alt="game">
+            <h3>Star Lengends 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <a href="#">Play now</a>
+          </div>
+          <div class="col-4">
+            <img src="{{ asset("images/game-06.png") }}" alt="game">
+            <h3>Wars19</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <a href="#">Play now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- End Top3 games --}}
+
 
 
 
     {{-- Start Footer --}}
+    
     <div class="footer text-white">
       <div class="container2">
         <div class="row">
@@ -204,14 +244,17 @@
          
         </div>
       </div>
+      
     </div>
-    {{-- End Footer --}}
-
     {{-- start sub-footer --}}
+    <hr class="hr-footer">
     <div class="subfooter">
-      <p class="lead text-center bg-dark text-light py-2">Created by <span style="color: var(--green-color)">Nabil</span> & <span style="color: var(--green-color)">Mouradi</span> &copy;</p>
+      <p class="lead bg-black text-center text-light py-2 pfooter">Created by <span style="color: var(--green-color)">Nabil</span> & <span style="color: var(--green-color)">Mouradi</span> &copy;</p>
     </div>
     {{-- End sub-footer --}}
+    {{-- End Footer --}}
+
+    
 
 
 

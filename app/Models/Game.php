@@ -11,9 +11,9 @@ class Game extends Model
     const CREATED_AT = 'creation_date';
     
     
-    // public function category(){
-    //     return $this->hasOne(Category::class);
-    // }
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 
 
 }

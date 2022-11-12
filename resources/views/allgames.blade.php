@@ -187,6 +187,240 @@
             </div>    
           </a>
         </div>
+        <div class="row category">
+          <h1 class="nameofcategory">Ninja Games</h1>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+        </div>
+        <div class="row category">
+          <h1 class="nameofcategory">Girls Games</h1>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+        </div>
+        <div class="row category">
+          <h1 class="nameofcategory">Ninja Games</h1>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+        </div>
+        <div class="row category">
+          <h1 class="nameofcategory">Girls Games</h1>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+        </div>
+        <div class="row category">
+          <h1 class="nameofcategory">Ninja Games</h1>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+        </div>
+        <div class="row category">
+          <h1 class="nameofcategory">Girls Games</h1>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+          <a href="{{ url("/allgames") }}" class="col text-center">
+            <div>
+              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
+              <h5>Name of the game Here</h5>
+            </div>    
+          </a>
+        </div>
       </div>
     </div>
 
@@ -197,6 +431,7 @@
       </div>
       {{-- End sub-footer --}}
   
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 
   </div>
@@ -206,7 +441,30 @@
 
    
 
+<script>
+// Get the button
+let mybutton = document.getElementById("myBtn");
 
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+console.log("testing jj");
+
+</script>
 
 </body>
 </html>

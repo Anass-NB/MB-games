@@ -37,7 +37,7 @@ Route::get("/fetchcat/{id}",[CategoryController::class,'fetch'])->middleware(['a
 Route::get('/webgames',[GameController::class,'index'])->middleware(['auth', 'verified'])->name('show_games');
 Route::post('/retrievewebgames',[GameController::class,'retrievegames'])->middleware(['auth', 'verified'])->name('retrieve_games');
 
-
+Route::get("mygames",[GameController::class,"recupgames"])->middleware(['auth', 'verified'])->name('recup_games');
 /*//Route Group Of Category Controller
 Route::controller(CategoryController::class)->group(function (){
     Route::get('/categories','index')->middleware(['auth', 'verified'])->name('show_cat');

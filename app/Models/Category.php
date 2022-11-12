@@ -10,7 +10,7 @@ class Category extends Model
     use HasFactory;
 
 
-    // public function game(){
-    //     return $this->belongsTo(Game::class);
-    // }
+    public function game(){
+        return $this->hasMany(Game::class,"category_id");
+    }
 }
