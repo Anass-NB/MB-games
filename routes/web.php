@@ -11,10 +11,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
-Route::get('/allgames', function () {
-    return view('allgames');
-});
 
+Route::get('/allgames',[GameController::class,'allgames'])->name("allgames");
 
 Route::get('/dashboard', function () {
     // $date_create_last_game = Game::where('id', '=',1    )->firstOrFail();
@@ -36,8 +34,8 @@ Route::post("/updatecat",[CategoryController::class,'update'])->middleware(['aut
 Route::get("/fetchcat/{id}",[CategoryController::class,'fetch'])->middleware(['auth', 'verified'])->name('category_fetch');
 Route::get('/webgames',[GameController::class,'index'])->middleware(['auth', 'verified'])->name('show_games');
 Route::post('/retrievewebgames',[GameController::class,'retrievegames'])->middleware(['auth', 'verified'])->name('retrieve_games');
-
-
+Route::get("/fetchgame/{id}",[GameController::class,'fetchgame'])->middleware(['auth', 'verified'])->name('game_fetch');
+Route::post("/fetchgame",[GameController::class,'updategame'])->middleware(['auth', 'verified'])->name('game_update');
 /*//Route Group Of Category Controller
 Route::controller(CategoryController::class)->group(function (){
     Route::get('/categories','index')->middleware(['auth', 'verified'])->name('show_cat');

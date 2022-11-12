@@ -199,7 +199,7 @@ height: 100%;
                 </li>
                 <li>
                     <a href="#">
-                        <i class="fa fa-bar-chart-o fa-2x"></i>
+                        <i class="fa fa-bar-chart fa-2x"></i>
                         <span class="nav-text">
                             Graphs and Statistics
                         </span>

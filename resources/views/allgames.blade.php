@@ -31,163 +31,22 @@
     {{-- Start Games --}}
     <div class="games">
       <div class="container">
+        @foreach($categories as $category)
         <div class="row category">
-          <h1 class="nameofcategory">Action Games</h1>
+          <h1 class="nameofcategory">{{$category->category}} Games</h1>
+          @foreach($games as $game)
+            @if($game->category == $category->category)
           <a href="{{ url("/allgames") }}" class="col text-center">
             <div>
-              <img src="{{ asset("images/game-02.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
+              <img src="game_image/{{$game->image}}" alt="game">
+              <h5>{{$game->title}}</h5>
             </div>    
           </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-02.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-02.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-02.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-02.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-02.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-        </div>
-        <div class="row category">
-          <h1 class="nameofcategory">Car Games</h1>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-06.png") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-06.png") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-06.png") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-06.png") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-06.png") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-06.png") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-        </div>
-        <div class="row category">
-          <h1 class="nameofcategory">Ninja Games</h1>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-04.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-        </div>
-        <div class="row category">
-          <h1 class="nameofcategory">Girls Games</h1>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-          <a href="{{ url("/allgames") }}" class="col text-center">
-            <div>
-              <img src="{{ asset("images/game-08.jpg") }}" alt="game">
-              <h5>Name of the game Here</h5>
-            </div>    
-          </a>
-        </div>
-      </div>
+          @endif
+          @endforeach
+          
+        </div>@endforeach
+       
     </div>
 
 
