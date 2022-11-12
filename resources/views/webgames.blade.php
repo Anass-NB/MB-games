@@ -242,6 +242,8 @@
       
         
         success: function(data){
+           
+          
           console.log(data.title);
           Swal.fire({
   position: 'top',
