@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Game;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -180,4 +181,17 @@ class GameController extends Controller
     {
         //
     }
+    public function recupgames()
+    {
+        for ($i=0; $i <= Category::count(); $i++) { 
+            $categories = Category::find($i);   
+            echo $categories;
+        }
+        
+        // return Game::count();
+        // return  view("test",compact("categories"));
+
+    }
+
+
 }

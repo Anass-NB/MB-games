@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Game;
 use Illuminate\Http\Request;
 use DB;
 use Hash;
@@ -97,4 +98,6 @@ class CategoryController extends Controller
     {
        
     }
+
+
 }
