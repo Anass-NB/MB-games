@@ -67,7 +67,7 @@
                     @foreach($cat as $cat)
                     <option   value="{{$cat->id}}" >{{$cat->category}}</option>
                     @endforeach
-</select>
+                  </select>
                   
                 </div>
                 <div class="col-9">

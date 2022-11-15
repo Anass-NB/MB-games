@@ -47,7 +47,7 @@ class GameController extends Controller
                 'title' => $data->title,
                 'category' => $data->category,
                 'url' => $data->url,
-                'image' => "<img id=".'imggame'." src=".asset('game_image/'.$data->image)."/>",
+                'image' => "<img id=".'imggame'." src='game_image/$data->image'/>",
                 'description' => $data->description,
                 'option' => "<button type=".'button'." data-id='$data->id'  class='btn btn-primary update' ><i class='fa fa-refresh' aria-hidden='true'></i>update</button>&nbsp;&nbsp;
                 <button type=".'button'."  class='btn btn-danger delete'><i class='fa fa-trash' aria-hidden='true'></i>delete</button>",
@@ -137,6 +137,15 @@ class GameController extends Controller
        
     }
 
+
+
+
+    public function gamepage($id){
+        $game =  Game::findorFail($id);
+        return view("game")->with([
+            "game" => $game,
+        ]);
+    }
     /**
      * Display the specified resource.
      *
@@ -183,10 +192,10 @@ class GameController extends Controller
     }
     public function recupgames()
     {
-        for ($i=0; $i <= Category::count(); $i++) { 
-            $categories = Category::find($i);   
-            echo $categories;
-        }
+        // for ($i=0; $i <= Category::count(); $i++) { 
+        //     $categories = Category::find($i);   
+        //     echo $categories;
+        // }
         
         // return Game::count();
         // return  view("test",compact("categories"));

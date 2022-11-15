@@ -10,8 +10,8 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">All Games</h5>
-                <p class="lead text-success">Game published</p>
+                <h5 class="card-title">All Games : </h5>
+                <p class="lead text-success"> {{  $number_of_games }} Game published</p>
                 <p class="card-text"><small class="text-muted"></small></p>
               </div>
             </div>
@@ -26,8 +26,8 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">All Games</h5>
-                <p class="lead text-success"> Admins </p>
+                <h5 class="card-title">Last game created at </h5>
+                <p class="lead text-success"> {{ $date_create_last_game->created_at }} </p>
                 <p class="card-text"><small class="text-muted"></small></p>
               </div>
             </div>
@@ -42,9 +42,25 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">All Games</h5>
-                <p class="lead">13 Game published</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <h5 class="card-title">All Categories</h5>
+                <p class="lead text-success">{{ $number_of_categories }} Categories</p>
+                <p class="card-text"><small class="text-muted"></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="https://s3.amazonaws.com/thumbnails.venngage.com/template/01df7dcb-6942-4db8-9fba-4fb9c58bb367.png" class="img-fluid rounded-start" alt="logo game" style="height: 100%">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Admin Actuel</h5>
+                <p class="lead text-danger">{{ auth()->user()->name }}</p>
+                <p class="card-text"><small class="text-muted"></small></p>
               </div>
             </div>
           </div>
