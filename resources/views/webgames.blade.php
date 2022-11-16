@@ -1,5 +1,5 @@
 <x-app-layout>
-<link rel="stylesheet" href="{{ url('/') }}/Jquery/jquery_css.css">
+
 <link rel="stylesheet" href="{{ url('/') }}/Jquery/jquerycss.css">
     <link rel="stylesheet" href="{{url('/')}}/bootstrap/bootstrap5.css" >
 <link rel="stylesheet" href="{{url('/')}}/bootstrap/fontawesome.css">
@@ -9,7 +9,7 @@
 
 <div class="container">
     <div >
-<table  id="games" class="cell-border compact stripe">
+<table  id="games" class="display" style="width:100%">
 <thead>
                         <tr>
                             <th>Title</th>

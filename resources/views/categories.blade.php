@@ -59,12 +59,12 @@
             
             <input type="hidden" name="id" id="id" value="">
             <input type="text" name="cat1" id="cat1" value="">
-        </form>
+       
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary cl" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary update">Save changes</button>
-      </div>
+        <button type="submit" class="btn btn-primary update" >Save changes</button>
+      </div> </form>
     </div>
   </div>
 </div>
@@ -115,7 +115,8 @@
       }
     });
 
- $('.update').on('click', function(){
+ $('#formup').submit( function(e){
+  e.preventDefault();
     var id = $('#id').val();
     var cat = $('#cat1').val();
     $.ajax({
