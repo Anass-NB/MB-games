@@ -18,7 +18,7 @@
   </head>
   <body class="font-sans antialiased">
     {{-- Star landing page --}}
-    <div class="landing" style="background-image: url('{{ asset("images/back1.jpg") }}');">
+    <div class="landing" style="background-image: url('{{ asset("images/god-of-war-4-2018-oo.jpg") }}');">
       <div class="overlay"></div>
       <div class="header">
         <div class="container2 flex justify-content-between">

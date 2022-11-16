@@ -374,12 +374,13 @@ ul {
 }
 .landi {
   /* position: relative; */
+  text-align: center;
 }
 .landi .text p{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,180%);
   z-index: 2222;
   font-family: 'Grenze Gotisch', cursive;
   font-size: 36px;
