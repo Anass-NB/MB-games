@@ -137,6 +137,15 @@ class GameController extends Controller
        
     }
 
+
+
+
+    public function gamepage($id){
+        $game =  Game::findorFail($id);
+        return view("game")->with([
+            "game" => $game,
+        ]);
+    }
     /**
      * Display the specified resource.
      *
@@ -183,10 +192,10 @@ class GameController extends Controller
     }
     public function recupgames()
     {
-        for ($i=0; $i <= Category::count(); $i++) { 
-            $categories = Category::find($i);   
-            echo $categories;
-        }
+        // for ($i=0; $i <= Category::count(); $i++) { 
+        //     $categories = Category::find($i);   
+        //     echo $categories;
+        // }
         
         // return Game::count();
         // return  view("test",compact("categories"));

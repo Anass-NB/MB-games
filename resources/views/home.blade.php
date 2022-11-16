@@ -249,7 +249,7 @@
     {{-- start sub-footer --}}
     <hr class="hr-footer">
     <div class="subfooter">
-      <p class="lead bg-black text-center text-light py-2 pfooter">Created by <span style="color: var(--green-color)">Nabil</span> & <span style="color: var(--green-color)">Mouradi</span> &copy;</p>
+      <p class="lead bg-black text-center text-light py-2 pfooter">Created by <span style="color: var(--green-color)">Mouradi</span> & <span style="color: var(--green-color)">Nabil <small style="color: var(--green-color)">2022 &copy;</small> </p>
     </div>
     {{-- End sub-footer --}}
     {{-- End Footer --}}

@@ -36,15 +36,15 @@
           <h1 class="nameofcategory">{{$category->category}} Games</h1>
           @foreach($games as $game)
             @if($game->category == $category->category)
-          <a href="{{ url("/allgames") }}" class="col text-center">
+          <a href="{{ route("game_page",$game->id) }}" class="col-3 mb-4 text-center">
             <div>
-              <img src="game_image/{{$game->image}}" alt="game">
+              <img class="gameimmg" src="{{ URL::asset("game_image/$game->image") }}" alt="game">
               <h5>{{$game->title}}</h5>
             </div>    
           </a>
           @endif
           @endforeach
-          
+          <a href="#" class="arrow-all text-end">ALL<i class="fa-solid fa-arrow-right ms-2"></i></a>
         </div>@endforeach
        
     </div>
@@ -52,7 +52,7 @@
 
       {{-- start sub-footer --}}
       <div class="subfooter ">
-        <p class="lead text-center text-light py-2">Created by <span style="color: var(--green-color)">Nabil</span> & <span style="color: var(--green-color)">Mouradi</span> &copy;</p>
+        <p class="lead text-center text-light py-2">Created by <span style="color: var(--green-color)">Mouradi</span> & <span style="color: var(--green-color)">Nabil</span>  <span>2022</span></p>
       </div>
       {{-- End sub-footer --}}
   
