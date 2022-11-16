@@ -44,7 +44,11 @@ class CategoryController extends Controller
     }
     public function delete(Request $request)
     {
-        // DB::table('categories')->where("id",$request->id)->delete();
+       $cat = DB::table('categories')
+       ->join('games','games.category_id','=','categories.id')
+       ->where('categories.id',$request->id)->first();
+       if(!$cat) DB::table('categories')->delete($request->id);
+
        return redirect()->route('show_cat');
     }
 

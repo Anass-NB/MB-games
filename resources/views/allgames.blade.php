@@ -31,12 +31,16 @@
     {{-- Start Games --}}
     <div class="games">
       <div class="container">
-        @foreach($categories as $category)
+        <?php $i1=0; while($i1<$i){?>
+        
         <div class="row category">
-          <h1 class="nameofcategory">{{$category->category}} Games</h1>
+          <h1 class="nameofcategory">{{$cat[$i1]}} Games</h1>
+          <?php $count=0;?>
           @foreach($games as $game)
-            @if($game->category == $category->category)
-          <a href="{{ route("game_page",$game->id) }}" class="col-3 mb-4 text-center">
+          <?php $count++;?>
+          <?php if($count==6) break;?>
+            @if($game->category == $cat[$i1])
+          <a href="{{ route('game_page',$game->id) }}" class="col-3 mb-4 text-center">
             <div>
               <img class="gameimmg" src="{{ URL::asset("game_image/$game->image") }}" alt="game">
               <h5>{{$game->title}}</h5>
@@ -45,7 +49,9 @@
           @endif
           @endforeach
           <a href="#" class="arrow-all text-end">ALL<i class="fa-solid fa-arrow-right ms-2"></i></a>
-        </div>@endforeach
+        </div>
+        <?php $i1++;}?>
+        
        
     </div>
 

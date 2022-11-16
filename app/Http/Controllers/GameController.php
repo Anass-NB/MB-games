@@ -15,10 +15,23 @@ class GameController extends Controller
         ->join('games','categories.id','=','games.category_id')
         ->select('categories.category','games.*')
         ->get();
-        $categories = DB::table('categories')->join('games','categories.id','=','games.category_id')->get();
-
+        $categories = DB::table('categories')
+        ->join('games','categories.id','=','games.category_id')
+        
+        ->get();
+        $cat = array();$i=0;
+        foreach($categories as $category){
+            if(!in_array($category->category,$cat)){
+               // array_push($cat,$category->category);
+               $cat[$i]=$category->category;$i++;
+            }
+        }
+       /* $category = array();
+        foreach($cat as $cat){
+            
+        }*/
       //dd($categories);
-        return view('allgames',['categories' => $categories,'games' => $games]);
+        return view('allgames',['cat' => $cat,'i'=>$i,'games' => $games]);
     }
     public function addnewgame(){
         $cat = DB::table('categories')->get();
