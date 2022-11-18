@@ -154,7 +154,7 @@
 
     <div class="statics">
       <div class="container2">
-        <h2>Our Statistics</h2>
+        <h2 class="grand-title">Our Statistics</h2>
         <div class="row mt-4">
           <div class="col py-4 text-center  text-white text-center">
             <i class="fa-solid fa-gamepad d-flex justify-content-center"></i>
@@ -182,7 +182,7 @@
 
     {{-- Start Top3 games --}}
     <div class="top-3" id="top-3">
-      <h2 class="text-center">Top 3 Games</h2>
+      <h2 class="text-center grand-title">Top 3 Games</h2>
       <div class="container2">
         <div class="row my-5 text-center">
           <div class="col-4">
