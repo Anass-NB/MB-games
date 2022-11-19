@@ -38,7 +38,7 @@
           <?php $count=0;?>
           @foreach($games as $game)
           <?php $count++;?>
-          <?php if($count==6) break;?>
+          <?php if($count<=5){ ?>
             @if($game->category == $cat[$i1])
           <a href="{{ route('game_page',$game->id) }}" class="col-3 mb-4 text-center">
             <div>
@@ -47,6 +47,7 @@
             </div>    
           </a>
           @endif
+          <?php }?>
           @endforeach
           <a href="#" class="arrow-all text-end">ALL<i class="fa-solid fa-arrow-right ms-2"></i></a>
         </div>

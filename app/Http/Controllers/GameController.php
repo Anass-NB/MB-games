@@ -63,7 +63,7 @@ class GameController extends Controller
                 'image' => "<img id=".'imggame'." src='game_image/$data->image'/>",
                 'description' => $data->description,
                 'option' => "<button type=".'button'." data-id='$data->id'  class='btn btn-primary update' ><i class='fa fa-refresh' aria-hidden='true'></i>update</button>&nbsp;&nbsp;
-                <button type=".'button'."  class='btn btn-danger delete'><i class='fa fa-trash' aria-hidden='true'></i>delete</button>",
+                <button type=".'button'."  class='btn btn-danger delete' data-id='$data->id'><i class='fa fa-trash' aria-hidden='true'></i>delete</button>",
             ];
             //data-bs-toggle='modal' data-bs-toggle='modal' data-bs-target='#game_modal'
         }
