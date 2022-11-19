@@ -215,7 +215,7 @@ ul {
 
 
 .nameofcategory {
-
+  text-transform: uppercase;
   font-family: 'Train One', cursive;
   color: white;
   font-size: 35px;
