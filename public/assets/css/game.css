@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica+SC&display=swap');
+
+
+
+
 :root{
   --main-color : #2196f3;
   --alt-color : #fff;
@@ -18,7 +22,7 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: white
+  background: white;
 
 }
 
@@ -56,30 +60,8 @@
   .container2 {
       width: 1170px;
   }
-
-}
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: 'Familjen Grotesk', sans-serif;
-
-  color: #fff;
-}
-
-a {
-  text-decoration: none;
-  color: #fff;
-}
-
-ul {
-  list-style: none;
-}
 
 .header {
   /* background-color: white; */
@@ -103,7 +85,8 @@ ul {
   height: 73px;
   display: flex;
   /* justify-content: center; */
-  align-items: center;
+  align-items: center;  
+  text-decoration: none;
 }
 .header .logo span {
   color: var(--green-color);
@@ -141,6 +124,7 @@ ul {
   position: relative;
   transition: .3s;
   overflow: hidden;
+  text-decoration: none;
 
 }
 @media (max-width: 767px){
@@ -169,7 +153,29 @@ ul {
   transition: .3s;
 }
 
-/* End Header */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Familjen Grotesk', sans-serif;
+
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
 
 
 /* Start landi */
@@ -180,6 +186,8 @@ ul {
   background-size: cover;
   width: 100%;
   position: relative;
+
+  background-image: var(--linear-color);
 }
 .landing .header , .landi{
   z-index: 222;
@@ -196,95 +204,49 @@ ul {
 }
 .landi {
   /* position: relative; */
+  text-align: center;
 }
 .landi .text p{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,180%);
   z-index: 2222;
   font-family: 'Grenze Gotisch', cursive;
   font-size: 36px;
   color: #97e97c;
 }
 /* Start landi */
-.allgameshtml {
-  background-image: linear-gradient(to left bottom, #0c283d, #04243e, #00203e, #001c3e, #00173d, #022650, #023565, #004679, #0072a0, #009eaa, #00c699, #97e97c);
-  background-repeat: no-repeat;
+
+
+/* game part */
+.game-part {
+
 }
-
-
-.nameofcategory {
-
-  font-family: 'Train One', cursive;
+.game-part .game-title {
+  font-family: 'IM Fell Double Pica SC', serif;
+  color: var(--green-color);
+}
+.game-part .game-description {
+  font-family: 'IM Fell Double Pica SC', serif;
   color: white;
-  font-size: 35px;
-  margin: 23px 0;
-
 }
-.games {
-  position: relative;
-  z-index: 1;
-}
-
-.category .col-3{
-  transition: .2s;
-}
-.category .col-3:hover {
-  transform: scale(1.1);
-  
-  /* transform: translateY(-5px); */
-}
-.category .col-3 img:hover{
-  box-shadow: 0px 0px 8px 1px var(--green-color);
-}
-
-.category .col-3 img{
-  height: 150px;
-  width: 150px;
-  border-radius: 8px;
-  transition: .3s;
-}
-.category .col-3 h5{
-  color: var(--green-color);
-  font-size: 16px;
-    margin: 5px 0;
-}
-
-.subfooter {
-  padding: 30px 0 1px ;
-  position: relative;
-  z-index: 2;
-}
-
-
-
-
-
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
+.game-info iframe {
   background-color: var(--green-color);
-  color: black;
-  cursor: pointer;
-  padding: 5px;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  transition: .3s;
-  border: 3px solid var(--green-color);
+  border-radius: 22px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
+/* game part */
 
-#myBtn:hover {
-  background-color: transparent;
-  border: 3px solid var(--green-color);
-  color: var(--green-color);
+.pfooter {
+  font-size: 13px !important;
+  padding: 9px 0;
+  margin: 0;
 }
-.arrow-all,.arrow-all:hover {
+.hr-footer {
   color: var(--green-color);
+  opacity: .7;
+  margin: 0;
 }
