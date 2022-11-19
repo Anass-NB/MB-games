@@ -30,83 +30,73 @@ class GameController extends Controller
         $i++;
       }
     }
-    /* $category = array();
-        foreach($cat as $cat){
-            
-        }*/
-    //dd($categories);
-    return view('allgames', ['cat' => $cat, 'i' => $i, 'games' => $games]);
-  }
-  public function addnewgame()
-  {
-    $cat = DB::table('categories')->get();
-    return view("addgame", ['cat' => $cat]);
-  }
-  /**
-   * Display a listing of the resource.
-   *
-   * @return \Illuminate\Http\Response
-   */
-  public function index()
-  {
-    $cat = DB::table('categories')->get();
-    return view("webgames", ['cat' => $cat]);
-  }
-  public function retrievegames()
-  {
-    $data = DB::table('games')
-      ->join('categories', 'categories.id', '=', 'games.category_id')
-      ->select("games.*", 'categories.category as category')
-      ->get();
-
-
-
-    foreach ($data as $data) {
-      $data1[] = [
-        'title' => $data->title,
-        'category' => $data->category,
-        'url' => $data->url,
-        'image' => "<img id=" . 'imggame' . " src='game_image/$data->image'/>",
-        'description' => $data->description,
-        'option' => "<button type=" . 'button' . " data-id='$data->id'  class='btn btn-primary update' ><i class='fa fa-refresh' aria-hidden='true'></i>update</button>&nbsp;&nbsp;
-                <button type=" . 'button' . "  class='btn btn-danger delete' data-id='$data->id'><i class='fa fa-trash' aria-hidden='true'></i>delete</button>",
-      ];
-      //data-bs-toggle='modal' data-bs-toggle='modal' data-bs-target='#game_modal'
+    
+        return view('allgames',['cat' => $cat,'i'=>$i,'games' => $games]);
     }
-    $json_data = array(
-      "data"            => $data1
-    );
-    return Response()->json($json_data);
-  }
-  public function fetchgame()
-  {
-    $data = DB::table('games')->where('games.id', $_GET['id'])
-      ->rightjoin('categories', 'categories.id', '=', 'games.category_id')
-      ->select('games.*', 'categories.category')->first();
-    $data1 = array(
-      "id" => $data->id, "title" => $data->title, "description" => $data->description,
-      "category_id" => $data->category_id, "category" => $data->category, "url" => $data->url, "image" => $data->image
-    );
-    return Response()->json($data1);
-  }
-  public function updategame(Request $request)
-  {
-    $image = $_FILES['image']['type'];
-    $validated = Validator::make(
-      array('image' => $image),
-      array($image => 'required| mimes: jpeg, png, jpg')
+    public function addnewgame(){
+        $cat = DB::table('categories')->get();
+        return view("addgame",['cat' => $cat]);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $cat = DB::table('categories')->get();
+        return view("webgames",['cat' => $cat]);
+    }
+    public function retrievegames(){
+        $data = DB::table('games')
+        ->join('categories','categories.id','=','games.category_id')
+        ->select("games.*",'categories.category as category')
+        ->get();
+      
+       
+        
+        foreach($data as $data){
+            $data1[] = [
+                'title' => $data->title,
+                'category' => $data->category,
+                'url' => $data->url,
+                'image' => "<img id=".'imggame'." src='game_image/$data->image'/>",
+                'description' => $data->description,
+                'option' => "<button type=".'button'." data-id='$data->id'  class='btn btn-primary update' ><i class='fa fa-refresh' aria-hidden='true'></i>update</button>&nbsp;&nbsp;
+                <button type=".'button'."  class='btn btn-danger delete'><i class='fa fa-trash' aria-hidden='true'></i>delete</button>",
+            ];
+            //data-bs-toggle='modal' data-bs-toggle='modal' data-bs-target='#game_modal'
+        }
+        $json_data = array(
+            "data"            => $data1
+        );
+        return Response()->json($json_data);
 
-
-    );
-    $filename = $_FILES['image']['name'];
-    $path = $request->file('image')->storeAs(
-      '/',
-      $filename,
-      'mouradi_disk'
-    );
-
-    //Storage::disk('mouradi_disk')->put('/',$_FILES['image']);
-
+       
+    }
+    public function fetchgame(){
+        $data = DB::table('games')->where('games.id',$_GET['id'])
+        ->rightjoin('categories', 'categories.id','=','games.category_id')
+        ->select('games.*','categories.category')->first();
+        $data1 =array("id" => $data->id,"title" => $data->title,"description" =>$data->description,
+    "category_id" => $data->category_id,"category"=>$data->category,"url" =>$data->url,"image" => $data->image);
+        return Response()->json($data1);
+    }
+    public function updategame(Request $request){
+        $image = $_FILES['image']['type'];
+        $validated = Validator::make(
+            array('image' => $image),
+            array($image => 'required| mimes: jpeg, png, jpg')
+            
+            
+        );
+        $filename = $_FILES['image']['name'];
+        $path = $request->file('image')->storeAs(
+            '/',$filename, 'mouradi_disk'
+        );
+        
+           //Storage::disk('mouradi_disk')->put('/',$_FILES['image']);
+            
 
     $data1 = DB::table('games')->where('id', $_POST['hiddenid'])->first();
     $data = DB::table('games')->where('id', $_POST['hiddenid'])->update(['title' => $_POST['title'], 'description' => $_POST['description'], 'category_id' => $_POST['category'], 'url'

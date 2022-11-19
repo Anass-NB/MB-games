@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ALL GAMES</title>
+  <title>{{ $category->category }} Category</title>
   <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,45 +35,26 @@
     {{-- Start Games --}}
     <div class="games">
       <div class="container">
-        <?php $i1=0; while($i1<$i){?>
-        
+
+        <h1 class="nameofcategory">{{ $category->category }} Games</h1>
         <div class="row category">
-          <h1 class="nameofcategory">{{$cat[$i1]}} Games</h1>
-          <?php $count=0;?>
-          @foreach($games as $game)
-          <?php $count++;?>
-          <?php if($count<=5){ ?>
-            @if($game->category == $cat[$i1])
-          <a href="{{ route('game_page',$game->id) }}" class="col-3 mb-4 text-center">
-            <div>
-              <img class="gameimmg" src="{{ URL::asset("game_image/$game->image") }}" alt="game">
-              <h5>{{$game->title}}</h5>
-            </div>    
-          </a>
-          @endif
-          <?php }?>
+          @foreach ($category->game as $game)
+            <a href="{{ route('game_page', $game->id) }}" class="col-3 mb-4 text-center">
+              <div>
+                <img class="gameimmg" src="{{ URL::asset("game_image/$game->image") }}" alt="game">
+                <h5>{{ $game->title }}</h5>
+              </div>
+            </a>
           @endforeach
-          <a href="#" class="arrow-all text-end">ALL<i class="fa-solid fa-arrow-right ms-2"></i></a>
         </div>
-        <?php $i1++;}?>
-        
-       
-    </div>
-
-         
-   
-
-
-
-       
-
 
       </div>
 
       {{-- start sub-footer --}}
       <div class="subfooter ">
         <p class="lead text-center text-light py-2">Created by <span style="color: var(--green-color)">Mouradi</span> &
-          <span style="color: var(--green-color)">Nabil</span> <span>2022</span></p>
+          <span style="color: var(--green-color)">Nabil</span> <span>2022</span>
+        </p>
       </div>
       {{-- End sub-footer --}}
 

@@ -142,7 +142,7 @@
             });
  
         $(document).ready(function() {
-            $('#games').DataTable();
+           // $('#games').DataTable();
             
           
         } );
