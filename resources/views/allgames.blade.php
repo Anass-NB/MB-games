@@ -41,7 +41,6 @@
           <h1 class="nameofcategory">{{$cat[$i1]}} Games</h1>
           
           @foreach($games as $game)
-          
           <?php if($game->category == $cat[$i1]) $count++;?>
           <?php if($count<=4){ ?>
             @if($game->category == $cat[$i1])
@@ -54,7 +53,7 @@
           @endif
           <?php }?>
           @endforeach
-          <a href="#" class="arrow-all text-end">ALL<i class="fa-solid fa-arrow-right ms-2"></i></a>
+          <a href="{{ route("category_page",$cat[$i1]) }}" class="arrow-all text-end">ALL<i class="fa-solid fa-arrow-right ms-2"></i></a>
         </div>
         <?php $i1++;}?>
         

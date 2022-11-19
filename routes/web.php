@@ -39,6 +39,11 @@ Route::get("/fetchgame/{id}",[GameController::class,'fetchgame'])->middleware(['
 Route::post("/fetchgame",[GameController::class,'updategame'])->middleware(['auth', 'verified'])->name('game_update');
 Route::get("/game/{id}",[GameController::class,'gamepage'])->name('game_page');
 Route::get("/delete-a-game-and-its-image/{id}",[GameController::class,'deletegame'])->middleware(['auth', 'verified'])->name('game_delete');
+
+
+
+Route::get("/category/{category}",[GameController::class,'recupCategory'])->name('category_page'); 
+
 /*//Route Group Of Category Controller
 Route::controller(CategoryController::class)->group(function (){
     Route::get('/categories','index')->middleware(['auth', 'verified'])->name('show_cat');
