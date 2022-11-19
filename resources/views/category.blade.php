@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ALL GAMES</title>
+  <title>{{ $category->category }} Category</title>
   <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,43 +35,26 @@
     {{-- Start Games --}}
     <div class="games">
       <div class="container">
-{{-- 
-        @foreach ($allcategories as $category)
-          <h2 style="color: red">Category : {{ $category->category }} </h2>
 
-          <ul>
-            @foreach ($category->game as $game)
-              <li>
-                <h4 style="color: green">{{ $game->title }} </h4>
-              </li>
-            @endforeach
-          </ul>
-        @endforeach --}}
-
-
-
-        @foreach ($allcategories as $category)
+        <h1 class="nameofcategory">{{ $category->category }} Games</h1>
         <div class="row category">
-            <h1 class="nameofcategory">{{ $category->category }} Games</h1>
-            @foreach ($category->game as $game)
-              <a href="{{ route('game_page', $game->id) }}" class="col-3 mb-4 text-center">
-                <div>
-                  <img class="gameimmg" src="{{ URL::asset("game_image/$game->image") }}" alt="game">
-                  <h5>{{ $game->title }}</h5>
-                </div>
-              </a>
-            @endforeach
-            <a href="{{ route("category_page",$category->id) }}" class="arrow-all text-end">ALL<i class="fa-solid fa-arrow-right ms-2"></i></a>
-          </div>
-        @endforeach
-
+          @foreach ($category->game as $game)
+            <a href="{{ route('game_page', $game->id) }}" class="col-3 mb-4 text-center">
+              <div>
+                <img class="gameimmg" src="{{ URL::asset("game_image/$game->image") }}" alt="game">
+                <h5>{{ $game->title }}</h5>
+              </div>
+            </a>
+          @endforeach
+        </div>
 
       </div>
 
       {{-- start sub-footer --}}
       <div class="subfooter ">
         <p class="lead text-center text-light py-2">Created by <span style="color: var(--green-color)">Mouradi</span> &
-          <span style="color: var(--green-color)">Nabil</span> <span>2022</span></p>
+          <span style="color: var(--green-color)">Nabil</span> <span>2022</span>
+        </p>
       </div>
       {{-- End sub-footer --}}
 

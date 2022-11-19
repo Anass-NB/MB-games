@@ -215,14 +215,18 @@ class GameController extends Controller
     //
   }
   public function recupgames()
-  {
-    // for ($i=0; $i <= Category::count(); $i++) { 
-    //     $categories = Category::find($i);   
-    //     echo $categories;
-    // }
+  {   
+    // return Category::find(33)->game;
+    return view("allgames")->with([
+      "allcategories" => Category::all(),
+    ]);
+  }
+  public function recupCategory($id)
+  {   
+    $category = Category::findorFail($id);
 
-    // return Game::count();
-    // return  view("test",compact("categories"));
-
+    return view("category")->with([
+      "category" => $category,
+    ]);
   }
 }
