@@ -35,14 +35,15 @@
     {{-- Start Games --}}
     <div class="games">
       <div class="container">
-        <?php $i1=0; while($i1<$i){?>
+        <?php $i1=0; while($i1<$i){ $count=0;?>
         
         <div class="row category">
           <h1 class="nameofcategory">{{$cat[$i1]}} Games</h1>
-          <?php $count=0;?>
+          
           @foreach($games as $game)
-          <?php $count++;?>
-          <?php if($count<=5){ ?>
+          
+          <?php if($game->category == $cat[$i1]) $count++;?>
+          <?php if($count<=4){ ?>
             @if($game->category == $cat[$i1])
           <a href="{{ route('game_page',$game->id) }}" class="col-3 mb-4 text-center">
             <div>
