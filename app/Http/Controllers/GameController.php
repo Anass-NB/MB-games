@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Game;
+use App\Models\User;
+use App\Notifications\CreateGame;
+use App\Notifications\GameCreated;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Storage;
-use Validator;
+
+use Illuminate\Support\Facades\Validator;
 
 class GameController extends Controller
 {
@@ -123,16 +130,12 @@ class GameController extends Controller
     //
   }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @param  \Illuminate\Http\Request  $request
-   * @return \Illuminate\Http\Response
-   */
+
   public function store(Request $request)
   {
+
     $image = $_FILES['image']['type'];
-    $validated = Vsalidator::make(
+    $validated = Validator::make(
       array('image' => $image),
       array($image => 'required| mimes: jpeg, png, jpg')
 
@@ -149,11 +152,30 @@ class GameController extends Controller
 
 
 
-    $id = DB::table('games')->insertGetId(['title' => $_POST['title'], 'description' => $_POST['description'], 'category_id' => $_POST['category'], 'url'
-    => $_POST['url'], 'image' => $_FILES['image']['name']]);
+    $id = DB::table('games')->insertGetId([
+      'title' => $_POST['title'],
+      'description' => $_POST['description'],
+      'category_id' => $_POST['category'],
+      'url' => $_POST['url'],
+      'image' => $_FILES['image']['name']
+    ]);
     $id = DB::table('games')->where('id', $id)->first();
 
-    $data = array('title' => $id->title);
+
+
+
+
+
+    //ANass
+
+    //notifications
+    //store image in folder
+
+
+    $data = array('title' => $request->title);
+    $users = User::where("id", "!=", Auth()->user()->id)->get();
+    Notification::send($users, new GameCreated($id->id, $id->title, Auth()->user()->name));
+
     return Response()->json($data);
   }
 
@@ -167,12 +189,23 @@ class GameController extends Controller
       "game" => $game,
     ]);
   }
-  /**
-   * Display the specified resource.
-   *
-   * @param  \App\Models\Game  $game
-   * @return \Illuminate\Http\Response
-   */
+  public function gamepage_notif($id)
+  {
+    $game =  Game::findorFail($id);
+    $get_id_notif = DB::table("notifications")->where("data->game_id", $id)->pluck("id");
+    DB::table("notifications")->where("id", $get_id_notif)->update(['read_at' => now()]);
+    return view("game")->with([
+      "game" => $game,
+    ]);
+  }
+  public function readnotif()
+  {
+
+    foreach (auth()->user()->unreadNotifications as $notification) {
+      $notification->markAsRead();
+    }
+    return redirect()->back();
+  }
   public function show(Game $game)
   {
     //
@@ -223,14 +256,11 @@ class GameController extends Controller
   }
   //all btn 
   public function recupCategory($category)
-  {   
-    $category = Category::where("category" , "=" , $category)->firstorFail();
+  {
+    $category = Category::where("category", "=", $category)->firstorFail();
 
     return view("category")->with([
       "category" => $category,
     ]);
   }
-
-
-
 }

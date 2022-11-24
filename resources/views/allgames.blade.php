@@ -70,10 +70,10 @@
 
 
       </div>
-
+      
       {{-- start sub-footer --}}
       <div class="subfooter ">
-        <p class="lead text-center text-light py-2">Created by <span style="color: var(--green-color)">Mouradi</span> &
+        <p class="lead text-center text-light py-2 pfooter">Created by <span style="color: var(--green-color)">Mouradi</span> &
           <span style="color: var(--green-color)">Nabil</span> <span>2022</span></p>
       </div>
       {{-- End sub-footer --}}
