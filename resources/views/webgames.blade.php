@@ -3,34 +3,18 @@
 <link rel="stylesheet" href="{{ url('/') }}/Jquery/jquerycss.css">
     <link rel="stylesheet" href="{{url('/')}}/bootstrap/bootstrap5.css" >
 <link rel="stylesheet" href="{{url('/')}}/bootstrap/fontawesome.css">
+@livewireStyles
 
-   
 
 
-<div class="container">
-    <div >
-<table  id="games" class="display" style="width:100%">
-<thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Category</th>
-                            <th>Url</th>
-                            <th>Image(click for fullscreen)</th>
-                            <th>Description</th>
-                            <th>Option</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                    </tbody>
-</table>
-</div>
+<div class="container" >
+<livewire:show-all-games /> 
 </div>
 
 
 <!-- Button trigger modal -->
 
-
+@livewireScripts
 <!-- Modal -->
 <div class="modal  modal-fullscreen" id="game_modal" tabindex="-1" aria-labelledby="game_modal" aria-hidden="true">
   <div class="">
@@ -105,7 +89,7 @@
 <script type="text/javascript" src="{{ url('/') }}/Jquery/jquery_script.js"></script>
 <script type="text/javascript" src="{{ url('/') }}/Jquery/jquery_Datatable.js"></script>
 
-<script type="text/javascript">
+<script type="text/javascript">/*
      $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -150,19 +134,24 @@
   
    
     
-    
+    */
+    $(document).ready(function() {
+            $('#games').DataTable();
+            
+          
+        } );
 </script>
 <script>
     
           $(document).ready(function(){
 
-            Swal.fire({
+            /*Swal.fire({
   position: 'top',
   icon: 'success',
   title: 'Games loaded successfully',
   showConfirmButton: false,
   timer: 1500
-})
+})*/
                  $( document ).on( "click","#imggame", function() {
             this.requestFullscreen();
   
