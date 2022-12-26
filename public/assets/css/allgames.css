@@ -288,3 +288,11 @@ ul {
 .arrow-all,.arrow-all:hover {
   color: var(--green-color);
 }
+.pfooter {
+  font-size: 13px !important;
+}
+
+.hr-footer {
+  color: var(--green-color);
+  opacity: .7;
+}

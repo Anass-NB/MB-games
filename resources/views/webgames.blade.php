@@ -12,7 +12,19 @@
 </div>
 
 
-<!-- Button trigger modal -->
+    <div>
+      <table id="games" class="display" style="width:100%">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Url</th>
+            <th>Image(click for fullscreen)</th>
+            <th>Description</th>
+            <th>Option</th>
+          </tr>
+        </thead>
+        <tbody>
 
 @livewireScripts
 <!-- Modal -->
@@ -69,16 +81,21 @@
           </form>
         </div>
       </div>
-      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary cl" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
-</div>
+  </div>
 
+  <script type="text/javascript" src="{{ url('/') }}/bootstrap/fontawesomejs.js"></script>
+  <script type="text/javascript" src="{{ url('/') }}/bootstrap/bootstrap5.min.js"></script>
+  <script src="{{ url('/') }}/sweetalert/sweetalert.js"></script>
 
+  <script type="text/javascript" src="{{ url('/') }}/Jquery/ajax.js"></script>
+  <script type="text/javascript" src="{{ url('/') }}/Jquery/jquery_script.js"></script>
+  <script type="text/javascript" src="{{ url('/') }}/Jquery/jquery_Datatable.js"></script>
 
 
 <script type="text/javascript" src="{{ url('/') }}/bootstrap/fontawesomejs.js"></script>
@@ -157,111 +174,174 @@
   
 });
 
-            });
+    $(document).ready(function() {
 
-          
-          
-          $(document).on( "click",".update", function(){
-           $("#game_modal").show();
-            var id = $(this).attr( "data-id" );
-            var route = "{{url('/')}}/fetchgame/"+id;
-            
-           $.ajax({
-                url: route,
-                type : 'GET',
-                data:{
-                    id:id,
-                },
-                success: function(data) {
-                   $("#hiddenid").val(data.id);
-                    $("#title").val(data.title);
-                    $("#description").val(data.description);
-                    $("#url").val(data.url);
-                    $("#category1").val(data.category_id);
-                    $("option[id='category1']").text(data.category);
-                    $(".gameimg").attr("src","{{url('/')}}/game_image/"+data.image);
-                },
-                error: function(error) {
-                    console.log(error);
-                }
-               
-            });
-            
+      $('#games').DataTable({
+        "processing": true,
+        "dataType": "json",
+        "serverSide": true,
+        "ajax": {
+          "url": '{{ route('retrieve_games') }}',
 
-           
-          })
-          $('.cl').on('click', function(){
-    $('.modal').hide();
- });
-</script>
-<script>
-   $('#game_form').submit(function(e){
+          "type": "POST",
+        },
+
+        "columns": [{
+            "data": "title"
+          },
+          {
+            "data": "category"
+          },
+          {
+            "data": "url"
+          },
+          {
+            "data": "image"
+          },
+          {
+            "data": "description"
+          },
+          {
+            "data": "option"
+          }
+        ],
+        "columnDefs": [{
+          "targets": [0, 4],
+          "orderable": false
+        }],
+        "order": [
+          [1, "ASC"]
+        ],
+
+      });
+
+      $(document).ready(function() {
+        // $('#games').DataTable();
+
+
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Games loaded successfully',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      $(document).on("click", "#imggame", function() {
+        this.requestFullscreen();
+
+      });
+
+    });
+
+
+
+    $(document).on("click", ".update", function() {
+      $("#game_modal").show();
+      var id = $(this).attr("data-id");
+      var route = "{{ url('/') }}/fetchgame/" + id;
+
+      $.ajax({
+        url: route,
+        type: 'GET',
+        data: {
+          id: id,
+        },
+        success: function(data) {
+          $("#hiddenid").val(data.id);
+          $("#title").val(data.title);
+          $("#description").val(data.description);
+          $("#url").val(data.url);
+          $("#category1").val(data.category_id);
+          $("option[id='category1']").text(data.category);
+          $(".gameimg").attr("src", "{{ url('/') }}/game_image/" + data.image);
+        },
+        error: function(error) {
+          console.log(error);
+        }
+
+      });
+
+
+
+    })
+    $('.cl').on('click', function() {
+      $('.modal').hide();
+    });
+  </script>
+  <script>
+    $('#game_form').submit(function(e) {
       e.preventDefault();
-     
-  
+
+
       var thisBtn = $(this);
-    var thisForm = thisBtn.closest("form");
-    var formData = new FormData(thisForm[0]);
+      var thisForm = thisBtn.closest("form");
+      var formData = new FormData(thisForm[0]);
       /*var title = $('#title').val();
-      var description = $('#description').val();
-     // var image= $('input[name="image"]')[0].files; 
-     
-      var cat_id = $('#category').val();
-      var url = $('#url').val();*/
-   
-      var url_route = "{{route('game_update')}}";
-  
-        $.ajax({
-        url : url_route,
-        type : 'POST',
+        var description = $('#description').val();
+       // var image= $('input[name="image"]')[0].files; 
+       
+        var cat_id = $('#category').val();
+        var url = $('#url').val();*/
+
+      var url_route = "{{ route('game_update') }}";
+
+      $.ajax({
+        url: url_route,
+        type: 'POST',
         processData: false,
         contentType: false,
-        data : formData,
-       /* data:{
-            _token:'{{csrf_token()}}',
-            title : title,
-            description : description,
-            cat_id : cat_id,
-            url : url,
-            image : image,
-           
+        data: formData,
+        /* data:{
+             _token:'{{ csrf_token() }}',
+             title : title,
+             description : description,
+             cat_id : cat_id,
+             url : url,
+             image : image,
             
-        },*/
-       
-      
-        
-        success: function(data){
-           
-          
+             
+         },*/
+
+
+
+        success: function(data) {
+
+
           console.log(data.title);
           Swal.fire({
-  position: 'top',
-  icon: 'success',
-  title: 'Game ' + data.title +' updated successfully',
-  showConfirmButton: false,
-  timer: 1500
-})
+            position: 'top',
+            icon: 'success',
+            title: 'Game ' + data.title + ' updated successfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
         },
-        error: function(data){
+        error: function(data) {
           var errors = data.responseJSON;
           Swal.fire({
-  position: 'top',
-  icon: 'error',
-  title: errors.message,
-  showConfirmButton: false,
-  timer: 8000
-})
+            position: 'top',
+            icon: 'error',
+            title: errors.message,
+            showConfirmButton: false,
+            timer: 8000
+          })
         }
       })
       /*else{
-        Swal.fire({
-  position: 'top',
-  icon: 'error',
-  title: 'give all data',
-  showConfirmButton: false,
-  timer: 1500
-})
-      }*/
-  });
-</script>
+          Swal.fire({
+    position: 'top',
+    icon: 'error',
+    title: 'give all data',
+    showConfirmButton: false,
+    timer: 1500
+  })
+        }*/
+    });
+  </script>
 </x-app-layout>

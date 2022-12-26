@@ -38,9 +38,13 @@ Route::get('/allgames',[GameController::class,'allgames'])->name('recupgames');
 Route::get("/fetchgame/{id}",[GameController::class,'fetchgame'])->middleware(['auth', 'verified'])->name('game_fetch');
 Route::post("/fetchgame",[GameController::class,'updategame'])->middleware(['auth', 'verified'])->name('game_update');
 Route::get("/game/{id}",[GameController::class,'gamepage'])->name('game_page');
+Route::get("/gaame/{id}",[GameController::class,'gamepage_notif'])->name('game_page_notif');
+Route::get("/readnotif",[GameController::class,'readnotif'])->name('readnotif');
 Route::get("/delete-a-game-and-its-image/{id}",[GameController::class,'deletegame'])->middleware(['auth', 'verified'])->name('game_delete');
 
-
+Route::get("notif",function(){
+    return view("test_notifications");
+});
 
 Route::get("/category/{category}",[GameController::class,'recupCategory'])->name('category_page'); 
 

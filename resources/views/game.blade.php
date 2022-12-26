@@ -13,9 +13,11 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <title>{{ $game->title }}</title>
+
 </head>
 
 <body>
+
   <div class="landing">
 
     <div class="header">
@@ -41,20 +43,16 @@
         <iframe src="{{ $game->url }}" width="80%" height="600" scrolling="none" frameborder="0"></iframe>
       </div>
     </div>
-    
-  {{-- start sub-footer --}}
-  <hr class="hr-footer">
-  <div class="subfooter">
-    <p class="lead  text-center text-light  pfooter">Created by <span
-        style="color: var(--green-color)">Mouradi</span> & <span style="color: var(--green-color)">Nabil <small
-          style="color: var(--green-color)">2022 &copy;</small> </p>
+
+    {{-- start sub-footer --}}
+    <hr class="hr-footer">
+    <div class="subfooter">
+      <p class="lead  text-center text-light  pfooter">Created by <span
+          style="color: var(--green-color)">Mouradi</span> & <span style="color: var(--green-color)">Nabil <small
+            style="color: var(--green-color)">2022 &copy;</small> </p>
+    </div>
+    {{-- End sub-footer --}}
   </div>
-  {{-- End sub-footer --}}
-  </div>
-
-
-
-
 
 </body>
 
