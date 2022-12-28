@@ -1,5 +1,6 @@
 <div>
     @if($updateMode == true)
+    
     <div class="container  card-content ">
    
     <div class="add-game">
@@ -57,7 +58,8 @@
     </div>
 
   </div>
-
+</div>
+</div>
 @endif
 
     {{-- The Master doesn't talk, he acts. --}}
@@ -94,6 +96,8 @@
 </div>
 @if($update_success == true)
   <script>
+    $('#master').DataTable();
+     
      Swal.fire({
             position: 'top',
             icon: 'success',

@@ -33,9 +33,8 @@
 <script type="text/javascript" src="{{url('/')}}/DataTables/datatables.min.js"></script>
 
 <script type="text/javascript">
- $('#master').DataTable( {
-    responsive: true
-} );
+
+ 
 /*
      $.ajaxSetup({
                 headers: {
@@ -88,13 +87,7 @@
     
           $(document).ready(function(){
 
-            /*Swal.fire({
-  position: 'top',
-  icon: 'success',
-  title: 'Games loaded successfully',
-  showConfirmButton: false,
-  timer: 1500
-})*/
+            $('#master').DataTable();
                  $( document ).on( "click","#imggame", function() {
             this.requestFullscreen();
   
