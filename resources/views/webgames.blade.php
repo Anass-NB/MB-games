@@ -32,6 +32,19 @@
 <script type="text/javascript" src="{{ url('/') }}/Jquery/jquery.js"></script>
 <script type="text/javascript" src="{{url('/')}}/DataTables/datatables.min.js"></script>
 
+
+  
+<script>
+ 
+
+   Livewire.on("deleteTriggered", (id, title) => {
+    const proceed = confirm('Are you sure you want to delete '+ title);
+
+    if (proceed) {
+        Livewire.emit("delete", id);
+    }
+});
+</script>
 <script type="text/javascript">
 
  

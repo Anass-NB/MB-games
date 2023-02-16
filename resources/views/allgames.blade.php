@@ -44,7 +44,7 @@
           <?php if($game->category == $cat[$i1]) $count++;?>
           <?php if($count<=4){ ?>
             @if($game->category == $cat[$i1])
-          <a href="{{ route('game_page',$game->id) }}" class="col-3 mb-4 text-center">
+          <a href="{{ route('game_page',$game->title) }}" class="col-3 mb-4 text-center">
             <div>
               <img class="gameimmg" src="{{ URL::asset("game_image/$game->image") }}" alt="game">
               <h5>{{$game->title}}</h5>

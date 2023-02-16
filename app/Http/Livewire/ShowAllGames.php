@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Game;
 use Livewire\WithFileUploads;
 use Validator;
 use DB;
@@ -17,11 +18,13 @@ class ShowAllGames extends Component
     public $newimage;
     public $title,$url,$image,$description,$category_id,$category;
     public $update_success = false;
+    public $delete_success = false;
     public function edit($id)
     {
         $this->game_id = $id;
         $this->updateMode = true;
         $this->update_success = false;
+        $this->delete_success = false;
         $this->one_rec = DB::table('games')->where('games.id', $this->game_id)
         ->rightjoin('categories', 'categories.id', '=', 'games.category_id')
         ->select('games.*', 'categories.category')->first();
@@ -31,6 +34,7 @@ class ShowAllGames extends Component
         $this->category = $this->one_rec->category;
         $this->category_id = $this->one_rec->category_id;
         $this->image = $this->one_rec->image;
+        
       
 
     }
@@ -40,7 +44,8 @@ class ShowAllGames extends Component
         
         if(!empty($this->newimage))
         {
-
+            
+            
         
         $name = $this->newimage->getClientOriginalName();
         $this->newimage->storeAs('/', $name, 'mouradi_disk');
@@ -58,13 +63,23 @@ class ShowAllGames extends Component
             
          $this->update_success = true;
          $this->updateMode =false;
+         $this->delete_success = false;
+    }
+    public function delete($id_de)
+    {
+        $this->update_success = false;
+         $this->updateMode =false;
+         $this->delete_success = true;
+        $game = Game::find($id_de);
+        
+        $game->delete();
     }
 
 
     public function render()
     {
         $this->cat = DB::table('categories')->get();
-
+        $this->update_success = false;
 
         $this->records = DB::table('games')
         ->join('categories', 'categories.id', '=', 'games.category_id')

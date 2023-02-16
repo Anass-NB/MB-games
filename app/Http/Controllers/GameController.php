@@ -184,7 +184,9 @@ class GameController extends Controller
 
   public function gamepage($id)
   {
-    $game =  Game::findorFail($id);
+   
+    $game =  DB::table("games")->where('title', $id)->first();
+   
     return view("game")->with([
       "game" => $game,
     ]);

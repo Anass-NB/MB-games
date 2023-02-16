@@ -49,7 +49,7 @@
             <div class="row g-3 ">
               <div class="col">
                 <input type="file" wire:model="newimage" class="form-control" id="image" name="image">
-                <img src="game_image/{{$image}}" style="width:70px;">
+                <img src="game_image/{{$image}}" id="imggame" style="width:70px;">
               </div>
             </div>
             <button class="btn btn-success mt-3 " wire:click.prevent="update">Update Game</button>
@@ -85,7 +85,8 @@
                     <td>{{ $record->category }}</td>
                     <td>{{ $record->url }}</td>
                     <td><img id="imggame" src="game_image/{{ $record->image}}" style="width:50px;"></td>
-                    <td><button type="button" wire:click.prevent="edit({{$record->id}})" class="btn btn-outline-primary">Edit</button></td>
+                    <td><button type="button" wire:click.prevent="edit({{$record->id}})" class="btn btn-outline-primary">Edit</button>
+                    <button type="button" wire:click="delete({{$record->id}})" class="btn btn-outline-danger">delete</button></td>
                  
                  </tr>
                  @endforeach
@@ -94,10 +95,12 @@
     </table>
     </div>
 </div>
+
+
 @if($update_success == true)
   <script>
-    $('#master').DataTable();
-     
+   
+   //$('#master').DataTable();
      Swal.fire({
             position: 'top',
             icon: 'success',
@@ -106,5 +109,5 @@
             timer: 1500
           })
   </script>
-@endif
+  @endif
 </div>
